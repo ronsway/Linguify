@@ -1,0 +1,175 @@
+{
+  "language": "hebrew",
+  "units": [
+    {
+      "id": "unit-1",
+      "name": "Basics",
+      "emoji": "👋",
+      "lessons": [
+        {
+          "id": "lesson-1-1",
+          "unitId": "unit-1",
+          "name": "Greetings",
+          "description": "Learn basic Hebrew greetings",
+          "questions": [
+            {
+              "id": "q-1-1-1",
+              "type": "multiple_choice",
+              "content": "Hello in Hebrew?",
+              "options": ["שלום", "ערב טוב", "בוקר טוב", "לילה טוב"],
+              "correctAnswer": "שלום"
+            },
+            {
+              "id": "q-1-1-2",
+              "type": "type",
+              "content": "Goodbye?",
+              "correctAnswer": "להתראות"
+            },
+            {
+              "id": "q-1-1-3",
+              "type": "multiple_choice",
+              "content": "Good morning?",
+              "options": ["ערב טוב", "בוקר טוב", "לילה טוב", "צהריים טובים"],
+              "correctAnswer": "בוקר טוב"
+            },
+            {
+              "id": "q-1-1-4",
+              "type": "type",
+              "content": "Thank you?",
+              "correctAnswer": "תודה"
+            },
+            {
+              "id": "q-1-1-5",
+              "type": "multiple_choice",
+              "content": "How are you?",
+              "options": ["מה שלומך?", "בוקר טוב", "להתראות", "תודה"],
+              "correctAnswer": "מה שלומך?"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-2",
+          "unitId": "unit-1",
+          "name": "Numbers",
+          "description": "Learn Hebrew numbers 1-10",
+          "questions": [
+            {
+              "id": "q-1-2-1",
+              "type": "multiple_choice",
+              "content": "What is 5?",
+              "options": ["ארבע", "חמש", "שש", "שבע"],
+              "correctAnswer": "חמש"
+            },
+            {
+              "id": "q-1-2-2",
+              "type": "type",
+              "content": "Number 3?",
+              "correctAnswer": "שלוש"
+            },
+            {
+              "id": "q-1-2-3",
+              "type": "multiple_choice",
+              "content": "Number 1?",
+              "options": ["אחד", "שנים", "שלוש", "ארבע"],
+              "correctAnswer": "אחד"
+            },
+            {
+              "id": "q-1-2-4",
+              "type": "type",
+              "content": "Number 10?",
+              "correctAnswer": "עשר"
+            },
+            {
+              "id": "q-1-2-5",
+              "type": "multiple_choice",
+              "content": "2 + 2?",
+              "options": ["ארבע", "חמש", "שש", "שלוש"],
+              "correctAnswer": "ארבע"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-3",
+          "unitId": "unit-1",
+          "name": "Colors",
+          "description": "Learn Hebrew colors",
+          "questions": [
+            {
+              "id": "q-1-3-1",
+              "type": "multiple_choice",
+              "content": "Red?",
+              "options": ["אדום", "כחול", "ירוק", "צהוב"],
+              "correctAnswer": "אדום"
+            },
+            {
+              "id": "q-1-3-2",
+              "type": "type",
+              "content": "Blue?",
+              "correctAnswer": "כחול"
+            },
+            {
+              "id": "q-1-3-3",
+              "type": "multiple_choice",
+              "content": "Green?",
+              "options": ["אדום", "כחול", "ירוק", "צהוב"],
+              "correctAnswer": "ירוק"
+            },
+            {
+              "id": "q-1-3-4",
+              "type": "type",
+              "content": "Yellow?",
+              "correctAnswer": "צהוב"
+            },
+            {
+              "id": "q-1-3-5",
+              "type": "multiple_choice",
+              "content": "Black?",
+              "options": ["לבן", "שחור", "אפור", "ורוד"],
+              "correctAnswer": "שחור"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-4",
+          "unitId": "unit-1",
+          "name": "Review",
+          "description": "Review Unit 1",
+          "questions": [
+            {
+              "id": "q-1-4-1",
+              "type": "type",
+              "content": "Hello?",
+              "correctAnswer": "שלום"
+            },
+            {
+              "id": "q-1-4-2",
+              "type": "multiple_choice",
+              "content": "Number 7?",
+              "options": ["שש", "שבע", "שמונה", "תשע"],
+              "correctAnswer": "שבע"
+            },
+            {
+              "id": "q-1-4-3",
+              "type": "type",
+              "content": "Red color?",
+              "correctAnswer": "אדום"
+            },
+            {
+              "id": "q-1-4-4",
+              "type": "multiple_choice",
+              "content": "Goodbye?",
+              "options": ["שלום", "להתראות", "בוקר טוב", "תודה"],
+              "correctAnswer": "להתראות"
+            },
+            {
+              "id": "q-1-4-5",
+              "type": "type",
+              "content": "Thank you?",
+              "correctAnswer": "תודה"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

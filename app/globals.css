@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Colors ─────────────────────────────────────────────── */
+  --color-green:        #58CC02;
+  --color-green-dark:   #46A302;
+  --color-green-light:  #D7FFB8;
+
+  --color-blue:         #1CB0F6;
+  --color-blue-dark:    #0A90D3;
+  --color-blue-light:   #DDF4FF;
+
+  --color-red:          #FF4B4B;
+  --color-red-light:    #FFE0E0;
+
+  --color-gold:         #FFC800;
+  --color-gold-dark:    #E0A800;
+  --color-gold-light:   #FFF5CC;
+
+  --color-purple:       #CE82FF;
+  --color-purple-dark:  #A855F7;
+
+  --color-orange:       #FF9600;
+
+  --color-gray-bg:      #F7F7F7;
+  --color-gray-card:    #FFFFFF;
+  --color-gray-border:  #E5E5E5;
+  --color-gray-text:    #3C3C3C;
+  --color-gray-text-s:  #777777;
+
+  /* ── Shadows ─────────────────────────────────────────────── */
+  --shadow-duolingo: 0 4px 0 rgb(0 0 0 / 0.2);
+
+  /* ── Typography ──────────────────────────────────────────── */
+  --font-sans: 'Nunito', sans-serif;
+
+  /* ── Animations ──────────────────────────────────────────── */
+  --animate-bounce-slow: bounce 1s infinite;
+  --animate-pulse-glow:  pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    25%       { transform: rotate(20deg); }
+    75%       { transform: rotate(-20deg); }
+  }
+}

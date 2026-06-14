@@ -453,7 +453,6 @@ html, body {
 }
 .feedback-inner { display: flex; align-items: flex-start; gap: 12px; }
 .feedback-icon { font-size: 28px; flex-shrink: 0; }
-.feedback-text-wrap {}
 .feedback-title { font-size: 17px; font-weight: 900; }
 .feedback-bar.correct .feedback-title { color: var(--green-d); }
 .feedback-bar.wrong .feedback-title { color: var(--red); }
@@ -662,7 +661,7 @@ html, body {
 <div id="lessonScreen" class="screen">
   <div class="lesson-topbar">
     <button class="btn-close" onclick="goHome()">✕</button>
-    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
     <div class="hearts-display" id="heartsDisplay"></div>
   </div>
 
@@ -689,7 +688,7 @@ html, body {
     <div class="result-stat"><div class="val" id="rStreak">0</div><div class="lbl">Streak</div></div>
   </div>
   <div class="xp-label" id="xpLabel">Level 1 · 0 / 100 XP</div>
-  <div class="xp-bar-wrap"><div class="xp-bar-fill" id="xpBarFill" style="width:0%"></div></div>
+  <div class="xp-bar-wrap"><div class="xp-bar-fill" id="xpBarFill"></div></div>
   <button class="btn-continue-home" onclick="goHome()">Continue →</button>
 </div>
 

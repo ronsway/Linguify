@@ -1,0 +1,175 @@
+{
+  "language": "german",
+  "units": [
+    {
+      "id": "unit-1",
+      "name": "Basics",
+      "emoji": "👋",
+      "lessons": [
+        {
+          "id": "lesson-1-1",
+          "unitId": "unit-1",
+          "name": "Greetings",
+          "description": "Learn German greetings",
+          "questions": [
+            {
+              "id": "q-1-1-1",
+              "type": "multiple_choice",
+              "content": "Hello?",
+              "options": ["Hallo", "Guten Morgen", "Auf Wiedersehen", "Gute Nacht"],
+              "correctAnswer": "Hallo"
+            },
+            {
+              "id": "q-1-1-2",
+              "type": "type",
+              "content": "Goodbye?",
+              "correctAnswer": "Auf Wiedersehen"
+            },
+            {
+              "id": "q-1-1-3",
+              "type": "multiple_choice",
+              "content": "Good morning?",
+              "options": ["Guten Tag", "Guten Morgen", "Guten Abend", "Gute Nacht"],
+              "correctAnswer": "Guten Morgen"
+            },
+            {
+              "id": "q-1-1-4",
+              "type": "type",
+              "content": "Thank you?",
+              "correctAnswer": "Danke"
+            },
+            {
+              "id": "q-1-1-5",
+              "type": "multiple_choice",
+              "content": "Please?",
+              "options": ["Bitte", "Danke", "Hallo", "Auf Wiedersehen"],
+              "correctAnswer": "Bitte"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-2",
+          "unitId": "unit-1",
+          "name": "Numbers",
+          "description": "Learn German numbers 1-10",
+          "questions": [
+            {
+              "id": "q-1-2-1",
+              "type": "multiple_choice",
+              "content": "Number 3?",
+              "options": ["Eins", "Zwei", "Drei", "Vier"],
+              "correctAnswer": "Drei"
+            },
+            {
+              "id": "q-1-2-2",
+              "type": "type",
+              "content": "Number 5?",
+              "correctAnswer": "Fünf"
+            },
+            {
+              "id": "q-1-2-3",
+              "type": "multiple_choice",
+              "content": "Number 9?",
+              "options": ["Sieben", "Acht", "Neun", "Zehn"],
+              "correctAnswer": "Neun"
+            },
+            {
+              "id": "q-1-2-4",
+              "type": "type",
+              "content": "Number 1?",
+              "correctAnswer": "Eins"
+            },
+            {
+              "id": "q-1-2-5",
+              "type": "multiple_choice",
+              "content": "Number 6?",
+              "options": ["Vier", "Fünf", "Sechs", "Sieben"],
+              "correctAnswer": "Sechs"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-3",
+          "unitId": "unit-1",
+          "name": "Colors",
+          "description": "Learn German colors",
+          "questions": [
+            {
+              "id": "q-1-3-1",
+              "type": "multiple_choice",
+              "content": "Red?",
+              "options": ["Rot", "Blau", "Grün", "Gelb"],
+              "correctAnswer": "Rot"
+            },
+            {
+              "id": "q-1-3-2",
+              "type": "type",
+              "content": "Blue?",
+              "correctAnswer": "Blau"
+            },
+            {
+              "id": "q-1-3-3",
+              "type": "multiple_choice",
+              "content": "Green?",
+              "options": ["Rot", "Blau", "Grün", "Lila"],
+              "correctAnswer": "Grün"
+            },
+            {
+              "id": "q-1-3-4",
+              "type": "type",
+              "content": "Yellow?",
+              "correctAnswer": "Gelb"
+            },
+            {
+              "id": "q-1-3-5",
+              "type": "multiple_choice",
+              "content": "Black?",
+              "options": ["Weiß", "Schwarz", "Grau", "Orange"],
+              "correctAnswer": "Schwarz"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-4",
+          "unitId": "unit-1",
+          "name": "Review",
+          "description": "Review Unit 1",
+          "questions": [
+            {
+              "id": "q-1-4-1",
+              "type": "type",
+              "content": "Hello?",
+              "correctAnswer": "Hallo"
+            },
+            {
+              "id": "q-1-4-2",
+              "type": "multiple_choice",
+              "content": "Number 7?",
+              "options": ["Fünf", "Sechs", "Sieben", "Acht"],
+              "correctAnswer": "Sieben"
+            },
+            {
+              "id": "q-1-4-3",
+              "type": "type",
+              "content": "Red?",
+              "correctAnswer": "Rot"
+            },
+            {
+              "id": "q-1-4-4",
+              "type": "multiple_choice",
+              "content": "Goodbye?",
+              "options": ["Hallo", "Auf Wiedersehen", "Danke", "Bitte"],
+              "correctAnswer": "Auf Wiedersehen"
+            },
+            {
+              "id": "q-1-4-5",
+              "type": "type",
+              "content": "Thank you?",
+              "correctAnswer": "Danke"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

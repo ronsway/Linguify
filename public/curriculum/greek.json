@@ -1,0 +1,175 @@
+{
+  "language": "greek",
+  "units": [
+    {
+      "id": "unit-1",
+      "name": "Basics",
+      "emoji": "👋",
+      "lessons": [
+        {
+          "id": "lesson-1-1",
+          "unitId": "unit-1",
+          "name": "Greetings",
+          "description": "Learn Greek greetings",
+          "questions": [
+            {
+              "id": "q-1-1-1",
+              "type": "multiple_choice",
+              "content": "Hello?",
+              "options": ["Γεια", "Καλημέρα", "Καληνύχτα", "Αντίο"],
+              "correctAnswer": "Γεία"
+            },
+            {
+              "id": "q-1-1-2",
+              "type": "type",
+              "content": "Goodbye?",
+              "correctAnswer": "Αντίο"
+            },
+            {
+              "id": "q-1-1-3",
+              "type": "multiple_choice",
+              "content": "Good morning?",
+              "options": ["Γεία", "Καλημέρα", "Καλησπέρα", "Καληνύχτα"],
+              "correctAnswer": "Καλημέρα"
+            },
+            {
+              "id": "q-1-1-4",
+              "type": "type",
+              "content": "Thank you?",
+              "correctAnswer": "Ευχαριστώ"
+            },
+            {
+              "id": "q-1-1-5",
+              "type": "multiple_choice",
+              "content": "Please?",
+              "options": ["Παρακαλώ", "Ευχαριστώ", "Γεία", "Αντίο"],
+              "correctAnswer": "Παρακαλώ"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-2",
+          "unitId": "unit-1",
+          "name": "Numbers",
+          "description": "Learn Greek numbers 1-10",
+          "questions": [
+            {
+              "id": "q-1-2-1",
+              "type": "multiple_choice",
+              "content": "Number 1?",
+              "options": ["Ένα", "Δύο", "Τρία", "Τέσσερα"],
+              "correctAnswer": "Ένα"
+            },
+            {
+              "id": "q-1-2-2",
+              "type": "type",
+              "content": "Number 5?",
+              "correctAnswer": "Πέντε"
+            },
+            {
+              "id": "q-1-2-3",
+              "type": "multiple_choice",
+              "content": "Number 8?",
+              "options": ["Έξι", "Επτά", "Οκτώ", "Εννέα"],
+              "correctAnswer": "Οκτώ"
+            },
+            {
+              "id": "q-1-2-4",
+              "type": "type",
+              "content": "Number 10?",
+              "correctAnswer": "Δέκα"
+            },
+            {
+              "id": "q-1-2-5",
+              "type": "multiple_choice",
+              "content": "Number 3?",
+              "options": ["Δύο", "Τρία", "Τέσσερα", "Πέντε"],
+              "correctAnswer": "Τρία"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-3",
+          "unitId": "unit-1",
+          "name": "Colors",
+          "description": "Learn Greek colors",
+          "questions": [
+            {
+              "id": "q-1-3-1",
+              "type": "multiple_choice",
+              "content": "Red?",
+              "options": ["Κόκκινο", "Μπλε", "Πράσινο", "Κίτρινο"],
+              "correctAnswer": "Κόκκινο"
+            },
+            {
+              "id": "q-1-3-2",
+              "type": "type",
+              "content": "Blue?",
+              "correctAnswer": "Μπλε"
+            },
+            {
+              "id": "q-1-3-3",
+              "type": "multiple_choice",
+              "content": "Green?",
+              "options": ["Κίτρινο", "Μπλε", "Πράσινο", "Ιώδες"],
+              "correctAnswer": "Πράσινο"
+            },
+            {
+              "id": "q-1-3-4",
+              "type": "type",
+              "content": "Yellow?",
+              "correctAnswer": "Κίτρινο"
+            },
+            {
+              "id": "q-1-3-5",
+              "type": "multiple_choice",
+              "content": "Black?",
+              "options": ["Λευκό", "Μαύρο", "Γκρι", "Πορτοκαλί"],
+              "correctAnswer": "Μαύρο"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-4",
+          "unitId": "unit-1",
+          "name": "Review",
+          "description": "Review Unit 1",
+          "questions": [
+            {
+              "id": "q-1-4-1",
+              "type": "type",
+              "content": "Hello?",
+              "correctAnswer": "Γεία"
+            },
+            {
+              "id": "q-1-4-2",
+              "type": "multiple_choice",
+              "content": "Number 7?",
+              "options": ["Πέντε", "Έξι", "Επτά", "Οκτώ"],
+              "correctAnswer": "Επτά"
+            },
+            {
+              "id": "q-1-4-3",
+              "type": "type",
+              "content": "Red?",
+              "correctAnswer": "Κόκκινο"
+            },
+            {
+              "id": "q-1-4-4",
+              "type": "multiple_choice",
+              "content": "Goodbye?",
+              "options": ["Γεία", "Αντίο", "Ευχαριστώ", "Παρακαλώ"],
+              "correctAnswer": "Αντίο"
+            },
+            {
+              "id": "q-1-4-5",
+              "type": "type",
+              "content": "Thank you?",
+              "correctAnswer": "Ευχαριστώ"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

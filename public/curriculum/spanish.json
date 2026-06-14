@@ -1,0 +1,175 @@
+{
+  "language": "spanish",
+  "units": [
+    {
+      "id": "unit-1",
+      "name": "Basics",
+      "emoji": "👋",
+      "lessons": [
+        {
+          "id": "lesson-1-1",
+          "unitId": "unit-1",
+          "name": "Greetings",
+          "description": "Learn Spanish greetings",
+          "questions": [
+            {
+              "id": "q-1-1-1",
+              "type": "multiple_choice",
+              "content": "Hello?",
+              "options": ["Hola", "Buenos días", "Adiós", "Buenas noches"],
+              "correctAnswer": "Hola"
+            },
+            {
+              "id": "q-1-1-2",
+              "type": "type",
+              "content": "Goodbye?",
+              "correctAnswer": "Adiós"
+            },
+            {
+              "id": "q-1-1-3",
+              "type": "multiple_choice",
+              "content": "Good morning?",
+              "options": ["Hola", "Buenos días", "Buenas tardes", "Buenas noches"],
+              "correctAnswer": "Buenos días"
+            },
+            {
+              "id": "q-1-1-4",
+              "type": "type",
+              "content": "Thank you?",
+              "correctAnswer": "Gracias"
+            },
+            {
+              "id": "q-1-1-5",
+              "type": "multiple_choice",
+              "content": "Please?",
+              "options": ["Por favor", "Gracias", "Hola", "Adiós"],
+              "correctAnswer": "Por favor"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-2",
+          "unitId": "unit-1",
+          "name": "Numbers",
+          "description": "Learn Spanish numbers 1-10",
+          "questions": [
+            {
+              "id": "q-1-2-1",
+              "type": "multiple_choice",
+              "content": "Number 2?",
+              "options": ["Uno", "Dos", "Tres", "Cuatro"],
+              "correctAnswer": "Dos"
+            },
+            {
+              "id": "q-1-2-2",
+              "type": "type",
+              "content": "Number 7?",
+              "correctAnswer": "Siete"
+            },
+            {
+              "id": "q-1-2-3",
+              "type": "multiple_choice",
+              "content": "Number 10?",
+              "options": ["Ocho", "Nueve", "Diez", "Once"],
+              "correctAnswer": "Diez"
+            },
+            {
+              "id": "q-1-2-4",
+              "type": "type",
+              "content": "Number 4?",
+              "correctAnswer": "Cuatro"
+            },
+            {
+              "id": "q-1-2-5",
+              "type": "multiple_choice",
+              "content": "Number 5?",
+              "options": ["Cuatro", "Cinco", "Seis", "Siete"],
+              "correctAnswer": "Cinco"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-3",
+          "unitId": "unit-1",
+          "name": "Colors",
+          "description": "Learn Spanish colors",
+          "questions": [
+            {
+              "id": "q-1-3-1",
+              "type": "multiple_choice",
+              "content": "Red?",
+              "options": ["Rojo", "Azul", "Verde", "Amarillo"],
+              "correctAnswer": "Rojo"
+            },
+            {
+              "id": "q-1-3-2",
+              "type": "type",
+              "content": "Blue?",
+              "correctAnswer": "Azul"
+            },
+            {
+              "id": "q-1-3-3",
+              "type": "multiple_choice",
+              "content": "Green?",
+              "options": ["Amarillo", "Azul", "Verde", "Morado"],
+              "correctAnswer": "Verde"
+            },
+            {
+              "id": "q-1-3-4",
+              "type": "type",
+              "content": "Yellow?",
+              "correctAnswer": "Amarillo"
+            },
+            {
+              "id": "q-1-3-5",
+              "type": "multiple_choice",
+              "content": "Black?",
+              "options": ["Blanco", "Negro", "Gris", "Naranja"],
+              "correctAnswer": "Negro"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-4",
+          "unitId": "unit-1",
+          "name": "Review",
+          "description": "Review Unit 1",
+          "questions": [
+            {
+              "id": "q-1-4-1",
+              "type": "type",
+              "content": "Hello?",
+              "correctAnswer": "Hola"
+            },
+            {
+              "id": "q-1-4-2",
+              "type": "multiple_choice",
+              "content": "Number 6?",
+              "options": ["Cuatro", "Cinco", "Seis", "Siete"],
+              "correctAnswer": "Seis"
+            },
+            {
+              "id": "q-1-4-3",
+              "type": "type",
+              "content": "Red?",
+              "correctAnswer": "Rojo"
+            },
+            {
+              "id": "q-1-4-4",
+              "type": "multiple_choice",
+              "content": "Goodbye?",
+              "options": ["Hola", "Adiós", "Gracias", "Por favor"],
+              "correctAnswer": "Adiós"
+            },
+            {
+              "id": "q-1-4-5",
+              "type": "type",
+              "content": "Thank you?",
+              "correctAnswer": "Gracias"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

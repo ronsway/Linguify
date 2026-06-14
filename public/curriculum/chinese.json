@@ -1,0 +1,175 @@
+{
+  "language": "chinese",
+  "units": [
+    {
+      "id": "unit-1",
+      "name": "Basics",
+      "emoji": "👋",
+      "lessons": [
+        {
+          "id": "lesson-1-1",
+          "unitId": "unit-1",
+          "name": "Greetings",
+          "description": "Learn Chinese greetings (Pinyin included)",
+          "questions": [
+            {
+              "id": "q-1-1-1",
+              "type": "multiple_choice",
+              "content": "Hello (nǐ hǎo)?",
+              "options": ["谢谢", "你好", "再见", "谢谢你"],
+              "correctAnswer": "你好"
+            },
+            {
+              "id": "q-1-1-2",
+              "type": "type",
+              "content": "Goodbye (zàijiàn)?",
+              "correctAnswer": "再见"
+            },
+            {
+              "id": "q-1-1-3",
+              "type": "multiple_choice",
+              "content": "Good morning (zǎo)?",
+              "options": ["晚上", "下午", "早上", "晚安"],
+              "correctAnswer": "早上"
+            },
+            {
+              "id": "q-1-1-4",
+              "type": "type",
+              "content": "Thank you (xièxie)?",
+              "correctAnswer": "谢谢"
+            },
+            {
+              "id": "q-1-1-5",
+              "type": "multiple_choice",
+              "content": "Please?",
+              "options": ["请", "谢谢", "好", "不好"],
+              "correctAnswer": "请"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-2",
+          "unitId": "unit-1",
+          "name": "Numbers",
+          "description": "Learn Chinese numbers 1-10",
+          "questions": [
+            {
+              "id": "q-1-2-1",
+              "type": "multiple_choice",
+              "content": "Number 1?",
+              "options": ["一", "二", "三", "四"],
+              "correctAnswer": "一"
+            },
+            {
+              "id": "q-1-2-2",
+              "type": "type",
+              "content": "Number 5?",
+              "correctAnswer": "五"
+            },
+            {
+              "id": "q-1-2-3",
+              "type": "multiple_choice",
+              "content": "Number 10?",
+              "options": ["八", "九", "十", "一"],
+              "correctAnswer": "十"
+            },
+            {
+              "id": "q-1-2-4",
+              "type": "type",
+              "content": "Number 3?",
+              "correctAnswer": "三"
+            },
+            {
+              "id": "q-1-2-5",
+              "type": "multiple_choice",
+              "content": "Number 7?",
+              "options": ["五", "六", "七", "八"],
+              "correctAnswer": "七"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-3",
+          "unitId": "unit-1",
+          "name": "Colors",
+          "description": "Learn Chinese colors",
+          "questions": [
+            {
+              "id": "q-1-3-1",
+              "type": "multiple_choice",
+              "content": "Red (hóng)?",
+              "options": ["红", "蓝", "绿", "黄"],
+              "correctAnswer": "红"
+            },
+            {
+              "id": "q-1-3-2",
+              "type": "type",
+              "content": "Blue (lán)?",
+              "correctAnswer": "蓝"
+            },
+            {
+              "id": "q-1-3-3",
+              "type": "multiple_choice",
+              "content": "Green (lǜ)?",
+              "options": ["红", "蓝", "绿", "黄"],
+              "correctAnswer": "绿"
+            },
+            {
+              "id": "q-1-3-4",
+              "type": "type",
+              "content": "Yellow (huáng)?",
+              "correctAnswer": "黄"
+            },
+            {
+              "id": "q-1-3-5",
+              "type": "multiple_choice",
+              "content": "Black (hēi)?",
+              "options": ["白", "黑", "灰", "紫"],
+              "correctAnswer": "黑"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-4",
+          "unitId": "unit-1",
+          "name": "Review",
+          "description": "Review Unit 1",
+          "questions": [
+            {
+              "id": "q-1-4-1",
+              "type": "type",
+              "content": "Hello?",
+              "correctAnswer": "你好"
+            },
+            {
+              "id": "q-1-4-2",
+              "type": "multiple_choice",
+              "content": "Number 4?",
+              "options": ["二", "三", "四", "五"],
+              "correctAnswer": "四"
+            },
+            {
+              "id": "q-1-4-3",
+              "type": "type",
+              "content": "Red?",
+              "correctAnswer": "红"
+            },
+            {
+              "id": "q-1-4-4",
+              "type": "multiple_choice",
+              "content": "Goodbye?",
+              "options": ["你好", "再见", "谢谢", "请"],
+              "correctAnswer": "再见"
+            },
+            {
+              "id": "q-1-4-5",
+              "type": "type",
+              "content": "Thank you?",
+              "correctAnswer": "谢谢"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

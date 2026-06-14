@@ -1,0 +1,175 @@
+{
+  "language": "french",
+  "units": [
+    {
+      "id": "unit-1",
+      "name": "Basics",
+      "emoji": "👋",
+      "lessons": [
+        {
+          "id": "lesson-1-1",
+          "unitId": "unit-1",
+          "name": "Greetings",
+          "description": "Learn French greetings",
+          "questions": [
+            {
+              "id": "q-1-1-1",
+              "type": "multiple_choice",
+              "content": "Hello?",
+              "options": ["Bonjour", "Bonsoir", "Bonne nuit", "À bientôt"],
+              "correctAnswer": "Bonjour"
+            },
+            {
+              "id": "q-1-1-2",
+              "type": "type",
+              "content": "Goodbye?",
+              "correctAnswer": "Au revoir"
+            },
+            {
+              "id": "q-1-1-3",
+              "type": "multiple_choice",
+              "content": "Good evening?",
+              "options": ["Bonjour", "Bonsoir", "Bonne nuit", "Bon matin"],
+              "correctAnswer": "Bonsoir"
+            },
+            {
+              "id": "q-1-1-4",
+              "type": "type",
+              "content": "Thank you?",
+              "correctAnswer": "Merci"
+            },
+            {
+              "id": "q-1-1-5",
+              "type": "multiple_choice",
+              "content": "Please?",
+              "options": ["S'il vous plaît", "Merci", "Au revoir", "Bonjour"],
+              "correctAnswer": "S'il vous plaît"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-2",
+          "unitId": "unit-1",
+          "name": "Numbers",
+          "description": "Learn French numbers 1-10",
+          "questions": [
+            {
+              "id": "q-1-2-1",
+              "type": "multiple_choice",
+              "content": "Number 2?",
+              "options": ["Un", "Deux", "Trois", "Quatre"],
+              "correctAnswer": "Deux"
+            },
+            {
+              "id": "q-1-2-2",
+              "type": "type",
+              "content": "Number 5?",
+              "correctAnswer": "Cinq"
+            },
+            {
+              "id": "q-1-2-3",
+              "type": "multiple_choice",
+              "content": "Number 8?",
+              "options": ["Six", "Sept", "Huit", "Neuf"],
+              "correctAnswer": "Huit"
+            },
+            {
+              "id": "q-1-2-4",
+              "type": "type",
+              "content": "Number 10?",
+              "correctAnswer": "Dix"
+            },
+            {
+              "id": "q-1-2-5",
+              "type": "multiple_choice",
+              "content": "Number 4?",
+              "options": ["Deux", "Trois", "Quatre", "Cinq"],
+              "correctAnswer": "Quatre"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-3",
+          "unitId": "unit-1",
+          "name": "Colors",
+          "description": "Learn French colors",
+          "questions": [
+            {
+              "id": "q-1-3-1",
+              "type": "multiple_choice",
+              "content": "Red?",
+              "options": ["Rouge", "Bleu", "Vert", "Jaune"],
+              "correctAnswer": "Rouge"
+            },
+            {
+              "id": "q-1-3-2",
+              "type": "type",
+              "content": "Blue?",
+              "correctAnswer": "Bleu"
+            },
+            {
+              "id": "q-1-3-3",
+              "type": "multiple_choice",
+              "content": "Green?",
+              "options": ["Jaune", "Bleu", "Vert", "Violet"],
+              "correctAnswer": "Vert"
+            },
+            {
+              "id": "q-1-3-4",
+              "type": "type",
+              "content": "Yellow?",
+              "correctAnswer": "Jaune"
+            },
+            {
+              "id": "q-1-3-5",
+              "type": "multiple_choice",
+              "content": "Black?",
+              "options": ["Blanc", "Noir", "Gris", "Orange"],
+              "correctAnswer": "Noir"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-4",
+          "unitId": "unit-1",
+          "name": "Review",
+          "description": "Review Unit 1",
+          "questions": [
+            {
+              "id": "q-1-4-1",
+              "type": "type",
+              "content": "Hello?",
+              "correctAnswer": "Bonjour"
+            },
+            {
+              "id": "q-1-4-2",
+              "type": "multiple_choice",
+              "content": "Number 6?",
+              "options": ["Quatre", "Cinq", "Six", "Sept"],
+              "correctAnswer": "Six"
+            },
+            {
+              "id": "q-1-4-3",
+              "type": "type",
+              "content": "Red?",
+              "correctAnswer": "Rouge"
+            },
+            {
+              "id": "q-1-4-4",
+              "type": "multiple_choice",
+              "content": "Goodbye?",
+              "options": ["Bonjour", "Au revoir", "Merci", "S'il vous plaît"],
+              "correctAnswer": "Au revoir"
+            },
+            {
+              "id": "q-1-4-5",
+              "type": "type",
+              "content": "Thank you?",
+              "correctAnswer": "Merci"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

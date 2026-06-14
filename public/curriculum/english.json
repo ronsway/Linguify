@@ -1,0 +1,175 @@
+{
+  "language": "english",
+  "units": [
+    {
+      "id": "unit-1",
+      "name": "Basics",
+      "emoji": "👋",
+      "lessons": [
+        {
+          "id": "lesson-1-1",
+          "unitId": "unit-1",
+          "name": "Greetings",
+          "description": "Learn basic English greetings",
+          "questions": [
+            {
+              "id": "q-1-1-1",
+              "type": "multiple_choice",
+              "content": "What is a formal greeting?",
+              "options": ["Hey", "Hello", "Yo", "Sup"],
+              "correctAnswer": "Hello"
+            },
+            {
+              "id": "q-1-1-2",
+              "type": "type",
+              "content": "How do you say goodbye?",
+              "correctAnswer": "Goodbye"
+            },
+            {
+              "id": "q-1-1-3",
+              "type": "multiple_choice",
+              "content": "What do you say in the morning?",
+              "options": ["Good evening", "Good morning", "Good night", "Hello"],
+              "correctAnswer": "Good morning"
+            },
+            {
+              "id": "q-1-1-4",
+              "type": "type",
+              "content": "Informal way to say hello?",
+              "correctAnswer": "Hi"
+            },
+            {
+              "id": "q-1-1-5",
+              "type": "multiple_choice",
+              "content": "Thank you in English?",
+              "options": ["Thanks", "Thankyou", "Thkyou", "Thnks"],
+              "correctAnswer": "Thanks"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-2",
+          "unitId": "unit-1",
+          "name": "Numbers",
+          "description": "Learn to count 1-10",
+          "questions": [
+            {
+              "id": "q-1-2-1",
+              "type": "multiple_choice",
+              "content": "What is 5?",
+              "options": ["Four", "Five", "Six", "Seven"],
+              "correctAnswer": "Five"
+            },
+            {
+              "id": "q-1-2-2",
+              "type": "type",
+              "content": "What is 3?",
+              "correctAnswer": "Three"
+            },
+            {
+              "id": "q-1-2-3",
+              "type": "multiple_choice",
+              "content": "2 + 2 = ?",
+              "options": ["Two", "Three", "Four", "Five"],
+              "correctAnswer": "Four"
+            },
+            {
+              "id": "q-1-2-4",
+              "type": "type",
+              "content": "Number 10?",
+              "correctAnswer": "Ten"
+            },
+            {
+              "id": "q-1-2-5",
+              "type": "multiple_choice",
+              "content": "After 7 comes?",
+              "options": ["Six", "Eight", "Nine", "Seven"],
+              "correctAnswer": "Eight"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-3",
+          "unitId": "unit-1",
+          "name": "Colors",
+          "description": "Learn common colors",
+          "questions": [
+            {
+              "id": "q-1-3-1",
+              "type": "multiple_choice",
+              "content": "Sky color?",
+              "options": ["Red", "Blue", "Green", "Yellow"],
+              "correctAnswer": "Blue"
+            },
+            {
+              "id": "q-1-3-2",
+              "type": "type",
+              "content": "Grass is?",
+              "correctAnswer": "Green"
+            },
+            {
+              "id": "q-1-3-3",
+              "type": "multiple_choice",
+              "content": "Blood is?",
+              "options": ["Blue", "Green", "Red", "Black"],
+              "correctAnswer": "Red"
+            },
+            {
+              "id": "q-1-3-4",
+              "type": "type",
+              "content": "Sun color?",
+              "correctAnswer": "Yellow"
+            },
+            {
+              "id": "q-1-3-5",
+              "type": "multiple_choice",
+              "content": "Opposite of white?",
+              "options": ["Gray", "Black", "Brown", "Purple"],
+              "correctAnswer": "Black"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-4",
+          "unitId": "unit-1",
+          "name": "Review",
+          "description": "Review Unit 1",
+          "questions": [
+            {
+              "id": "q-1-4-1",
+              "type": "type",
+              "content": "Formal hello?",
+              "correctAnswer": "Hello"
+            },
+            {
+              "id": "q-1-4-2",
+              "type": "multiple_choice",
+              "content": "Number 8?",
+              "options": ["Seven", "Eight", "Nine", "Six"],
+              "correctAnswer": "Eight"
+            },
+            {
+              "id": "q-1-4-3",
+              "type": "type",
+              "content": "Red color word?",
+              "correctAnswer": "Red"
+            },
+            {
+              "id": "q-1-4-4",
+              "type": "multiple_choice",
+              "content": "How to say goodbye?",
+              "options": ["Hello", "Hi", "Goodbye", "Thanks"],
+              "correctAnswer": "Goodbye"
+            },
+            {
+              "id": "q-1-4-5",
+              "type": "type",
+              "content": "Thank you word?",
+              "correctAnswer": "Thanks"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
