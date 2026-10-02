@@ -633,6 +633,692 @@ html, body {
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 3px; }
+
+/* ── VOCAB ACTIONS ROW ──────────────────────────────────── */
+.vocab-actions-row {
+  display: flex;
+  gap: 8px;
+  padding: 8px 16px 12px;
+  background: rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
+.vocab-action-btn {
+  flex: 1;
+  padding: 10px 8px;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: var(--gold);
+  color: #3C3C3C;
+  box-shadow: 0 3px 0 var(--gold-d);
+  white-space: nowrap;
+}
+.vocab-action-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 0 var(--gold-d); }
+.vocab-action-btn:active { transform: translateY(2px); box-shadow: none; }
+.vocab-action-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }
+
+/* ── WORD NATIVE (non-RTL vocab words) ───────────────────── */
+.word-native {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--text);
+}
+
+/* ── CONJUGATION SCREEN ─────────────────────────────────── */
+#conjugationScreen {
+  background: linear-gradient(160deg, #1a2a3a 0%, #0d3a5c 40%, #1a4a7a 100%);
+  overflow: hidden;
+}
+.conj-search-row {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px 6px;
+  flex-shrink: 0;
+}
+.conj-search-row .word-card-input { flex: 1; }
+.conj-search-status {
+  padding: 0 16px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  min-height: 16px;
+}
+.conj-verb-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 4px 16px 16px;
+}
+.conj-verb-chip {
+  background: rgba(255,255,255,0.12);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.conj-verb-chip:hover { background: rgba(255,255,255,0.22); }
+.conj-verb-chip .chip-en { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.6); margin-left: 4px; }
+.conj-change-verb-btn {
+  background: rgba(255,255,255,0.14);
+  border: none;
+  border-radius: 9px;
+  padding: 6px 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
+  cursor: pointer;
+  margin: 0 16px 8px;
+}
+.conj-change-verb-btn:hover { background: rgba(255,255,255,0.24); }
+.conj-tense-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
+.conj-tab {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.7);
+}
+.conj-tab.active { background: var(--gold); color: #3C3C3C; }
+.conj-tab:hover:not(.active) { background: rgba(255,255,255,0.22); color: #fff; }
+.conj-table-wrap {
+  flex: 1;
+  overflow: auto;
+  padding: 12px 16px 24px;
+}
+.conj-table {
+  border-collapse: collapse;
+  font-family: 'Nunito', sans-serif;
+}
+.conj-table th {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 10px 12px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.1);
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.conj-table th.subj-col {
+  text-align: left;
+  background: rgba(255,255,255,0.2);
+  left: 0;
+  z-index: 2;
+}
+.conj-table td {
+  padding: 10px 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  white-space: nowrap;
+}
+.conj-table td.subj-cell {
+  font-weight: 900;
+  color: var(--gold);
+  text-align: left;
+  background: rgba(0,0,0,0.2);
+  position: sticky;
+  left: 0;
+}
+.conj-table tr:nth-child(even) td { background: rgba(255,255,255,0.05); }
+.conj-table tr:nth-child(even) td.subj-cell { background: rgba(0,0,0,0.25); }
+.conj-tense-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 4px 2px 10px;
+}
+
+/* ── TRANSLATE GAME SCREEN ───────────────────────────────── */
+#translateScreen {
+  background: linear-gradient(160deg, #1a2a3a 0%, #0d3a5c 40%, #1a4a7a 100%);
+  overflow: hidden;
+}
+.trans-sentence-card {
+  width: 100%;
+  max-width: 360px;
+  background: #fff;
+  border-radius: 24px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+.trans-sentence-label {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text-s);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+}
+.trans-sentence-text {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+/* ── HOME NAV ROW ─────────────────────────────────────────── */
+.home-nav-row {
+  display: flex;
+  gap: 10px;
+  padding: 0 20px 12px;
+}
+.home-nav-btn {
+  flex: 1;
+  background: rgba(255,255,255,0.12);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 14px;
+  padding: 12px 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: background 0.2s;
+}
+.home-nav-btn:hover { background: rgba(255,255,255,0.22); }
+.home-nav-btn .nav-icon { font-size: 22px; }
+
+.lang-switch-btn {
+  background: rgba(255,255,255,0.18);
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.lang-switch-btn:hover { background: rgba(255,255,255,0.28); }
+
+/* ── VOCABULARY SCREEN ────────────────────────────────────── */
+#vocabScreen {
+  background: linear-gradient(160deg, #1a2a3a 0%, #0d3a5c 40%, #1a4a7a 100%);
+  overflow: hidden;
+}
+.vocab-topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(0,0,0,0.2);
+}
+.vocab-title {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 900;
+  color: #fff;
+}
+.btn-play-flash {
+  background: var(--gold);
+  color: #3C3C3C;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 3px 0 var(--gold-d);
+  transition: all 0.15s;
+}
+.btn-play-flash:hover:not(:disabled) { transform: translateY(-1px); }
+.btn-play-flash:active:not(:disabled) { transform: translateY(2px); box-shadow: none; }
+.btn-play-flash:disabled { opacity: 0.4; cursor: not-allowed; }
+.vocab-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 16px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.vocab-section-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 4px 2px 0;
+}
+.vocab-folder-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.vocab-folder {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 86px;
+  padding: 14px;
+  border: 2px solid rgba(255,255,255,0.14);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s, border-color 0.2s;
+}
+.vocab-folder:hover { transform: translateY(-2px); background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.3); }
+.vocab-folder-icon { font-size: 26px; flex-shrink: 0; }
+.vocab-folder-info { min-width: 0; }
+.vocab-folder-name { display: block; font-size: 14px; font-weight: 900; }
+.vocab-folder-count { display: block; margin-top: 3px; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.65); }
+.vocab-list-header { display: flex; align-items: center; gap: 10px; }
+.vocab-back-btn {
+  border: none;
+  border-radius: 9px;
+  padding: 7px 10px;
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.vocab-back-btn:hover { background: rgba(255,255,255,0.24); }
+.vocab-list-title { flex: 1; font-size: 16px; font-weight: 900; color: #fff; }
+.vocab-add-btn {
+  width: 100%;
+  background: rgba(255,255,255,0.1);
+  border: 2px dashed rgba(255,255,255,0.3);
+  border-radius: 16px;
+  padding: 14px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.vocab-add-btn:hover {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
+}
+.word-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.word-card.suggested {
+  border: 2px solid var(--gold);
+  background: var(--gold-l);
+}
+.word-card.new-form {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+.word-card-left {
+  flex: 1;
+  min-width: 0;
+}
+.word-hebrew {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--text);
+  direction: rtl;
+  text-align: right;
+}
+.word-english {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-s);
+  margin-top: 2px;
+}
+.word-definition {
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--text-s);
+  margin-top: 5px;
+}
+.word-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin-top: 5px;
+  font-size: 11px;
+  color: var(--text-s);
+}
+.word-audio,
+.word-source {
+  color: var(--blue-d);
+  font-weight: 800;
+  text-decoration: none;
+}
+.word-audio:hover,
+.word-source:hover { text-decoration: underline; }
+.vocab-attribution {
+  padding: 14px 4px 4px;
+  color: rgba(255,255,255,0.55);
+  font-size: 11px;
+  text-align: center;
+}
+.vocab-attribution a { color: rgba(255,255,255,0.8); }
+.word-card-right {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.wc-btn {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.wc-btn:active { transform: translateY(1px); }
+.wc-btn-edit    { background: var(--blue-l); color: var(--blue-d); }
+.wc-btn-edit:hover    { background: var(--blue); color: #fff; }
+.wc-btn-remove  { background: var(--red-l); color: var(--red); }
+.wc-btn-remove:hover  { background: var(--red); color: #fff; }
+.wc-btn-accept  { background: var(--green-l); color: var(--green-d); }
+.wc-btn-accept:hover  { background: var(--green); color: #fff; }
+.wc-btn-decline { background: #f0f0f0; color: var(--text-s); }
+.wc-btn-decline:hover { background: #ddd; color: var(--text); }
+.wc-btn-insert  { background: var(--green-l); color: var(--green-d); }
+.wc-btn-insert:hover  { background: var(--green); color: #fff; }
+.wc-btn-cancel  { background: #f0f0f0; color: var(--text-s); }
+.wc-btn-cancel:hover  { background: #ddd; color: var(--text); }
+.word-card-form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.word-card-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.word-card-input:focus { border-color: var(--blue); }
+.word-card-input.hebrew-input { direction: rtl; font-size: 20px; }
+.word-card-form-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+.suggested-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--gold-d);
+  background: #fff8dc;
+  border-radius: 6px;
+  padding: 2px 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+.vocab-empty {
+  text-align: center;
+  color: rgba(255,255,255,0.45);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 40px 20px;
+  line-height: 1.8;
+}
+
+/* ── FLASHCARD GAME SCREEN ────────────────────────────────── */
+#flashcardScreen {
+  background: linear-gradient(160deg, #1a2a3a 0%, #0d3a5c 40%, #1a4a7a 100%);
+  overflow: hidden;
+}
+.flash-topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(0,0,0,0.2);
+}
+.flash-title {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 900;
+  color: #fff;
+}
+.flash-progress-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+}
+.flash-progress-bar-wrap {
+  height: 6px;
+  background: rgba(255,255,255,0.2);
+  margin: 0;
+}
+.flash-progress-bar-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 0 3px 3px 0;
+  transition: width 0.4s ease;
+}
+.flash-card-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px 16px;
+  gap: 20px;
+  overflow-y: auto;
+}
+.flashcard {
+  width: 100%;
+  max-width: 360px;
+  perspective: 900px;
+}
+.flashcard-inner {
+  width: 100%;
+  min-height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.34,1.56,0.64,1);
+}
+.flashcard-inner.flipped { transform: rotateY(180deg); }
+.flashcard-face {
+  position: absolute;
+  inset: 0;
+  min-height: 200px;
+  background: #fff;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+.flashcard-face.back {
+  transform: rotateY(180deg);
+  background: var(--green-l);
+  border: 3px solid var(--green);
+}
+.flashcard-hebrew {
+  font-size: 52px;
+  font-weight: 900;
+  color: var(--text);
+  direction: rtl;
+  text-align: center;
+  line-height: 1.2;
+}
+.flashcard-hint {
+  font-size: 13px;
+  color: var(--text-s);
+  font-weight: 600;
+  margin-top: 8px;
+  text-align: center;
+}
+.flashcard-answer {
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--green-d);
+  text-align: center;
+}
+.flashcard-answer-sub {
+  font-size: 13px;
+  color: var(--text-s);
+  font-weight: 600;
+  margin-top: 6px;
+  text-align: center;
+}
+.flash-input-area {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.flash-text-input {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.95);
+  color: var(--text);
+  outline: none;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+.flash-text-input:focus { border-color: var(--gold); }
+.flash-text-input.correct-input { border-color: var(--green); background: var(--green-l); }
+.flash-text-input.wrong-input   { border-color: var(--red);   background: var(--red-l); }
+.flash-result-row {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.flash-result-row.show { display: flex; }
+.flash-result-badge {
+  font-size: 15px;
+  font-weight: 900;
+  padding: 8px 20px;
+  border-radius: 30px;
+  text-align: center;
+}
+.flash-result-badge.correct { background: var(--green-l); color: var(--green-d); }
+.flash-result-badge.wrong   { background: var(--red-l);   color: var(--red); }
+.flash-result-badge.passed  { background: var(--gold-l);  color: var(--gold-d); }
+.flash-btn-row {
+  display: flex;
+  gap: 10px;
+}
+.flash-btn {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.flash-btn:active:not(.inactive) { transform: translateY(2px); }
+.flash-btn-submit {
+  background: var(--green);
+  color: #fff;
+  box-shadow: 0 4px 0 var(--green-d);
+}
+.flash-btn-submit:hover:not(.inactive) { transform: translateY(-1px); box-shadow: 0 5px 0 var(--green-d); }
+.flash-btn-submit.inactive {
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.4);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.flash-btn-pass {
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.75);
+  border: 2px solid rgba(255,255,255,0.2);
+}
+.flash-btn-pass:hover { background: rgba(255,255,255,0.22); }
+.flash-btn-next {
+  background: var(--blue);
+  color: #fff;
+  box-shadow: 0 4px 0 var(--blue-d);
+}
+.flash-btn-next:hover { transform: translateY(-1px); box-shadow: 0 5px 0 var(--blue-d); }
+.flash-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  text-align: center;
+}
+.flash-summary-icon { font-size: 72px; }
+.flash-summary-title { font-size: 28px; font-weight: 900; color: #fff; }
+.flash-summary-stats { display: flex; gap: 12px; }
+.flash-stat {
+  background: rgba(255,255,255,0.14);
+  border-radius: 14px;
+  padding: 14px 18px;
+  min-width: 78px;
+}
+.flash-stat .val { font-size: 26px; font-weight: 900; color: var(--gold); }
+.flash-stat .lbl { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; }
 </style>
 </head>
 <body>
@@ -641,10 +1327,13 @@ html, body {
 <div id="homeScreen" class="screen active">
   <div class="home-header">
     <div class="app-logo">fa<span>la</span>!</div>
-    <div class="stats-bar">
-      <div class="stat-pill"><span class="icon">🔥</span><span id="homeStreak">0</span></div>
-      <div class="stat-pill"><span class="icon">⚡</span><span id="homeXP">0</span></div>
-      <div class="stat-pill"><span class="icon">💎</span><span id="homeGems">50</span></div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <div class="stats-bar">
+        <div class="stat-pill"><span class="icon">🔥</span><span id="homeStreak">0</span></div>
+        <div class="stat-pill"><span class="icon">⚡</span><span id="homeXP">0</span></div>
+        <div class="stat-pill"><span class="icon">💎</span><span id="homeGems">50</span></div>
+      </div>
+      <button class="lang-switch-btn" id="langSwitchBtn" onclick="switchLanguage()">🇵🇹 PT</button>
     </div>
   </div>
 
@@ -661,7 +1350,7 @@ html, body {
 <div id="lessonScreen" class="screen">
   <div class="lesson-topbar">
     <button class="btn-close" onclick="goHome()">✕</button>
-    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
     <div class="hearts-display" id="heartsDisplay"></div>
   </div>
 
@@ -688,8 +1377,63 @@ html, body {
     <div class="result-stat"><div class="val" id="rStreak">0</div><div class="lbl">Streak</div></div>
   </div>
   <div class="xp-label" id="xpLabel">Level 1 · 0 / 100 XP</div>
-  <div class="xp-bar-wrap"><div class="xp-bar-fill" id="xpBarFill"></div></div>
+  <div class="xp-bar-wrap"><div class="xp-bar-fill" id="xpBarFill" style="width:0%"></div></div>
   <button class="btn-continue-home" onclick="goHome()">Continue →</button>
+</div>
+
+<!-- ── VOCABULARY SCREEN ──────────────────────────────────── -->
+<div id="vocabScreen" class="screen">
+  <div class="vocab-topbar">
+    <button class="btn-close" onclick="goHome()">✕</button>
+    <div class="vocab-title" id="vocabScreenTitle">📚 Vocabulary</div>
+  </div>
+  <div class="vocab-actions-row">
+    <button class="vocab-action-btn" id="btnPlayFlash" onclick="startFlashcards()">🃏 Flashcards</button>
+    <button class="vocab-action-btn" onclick="openConjugation()">📝 Conjugation</button>
+    <button class="vocab-action-btn" onclick="startTranslate()">🌐 Translate</button>
+  </div>
+  <div class="flash-progress-bar-wrap"><div class="flash-progress-bar-fill" id="vocabProgressBar" style="width:0%"></div></div>
+  <div class="vocab-content" id="vocabContent"></div>
+  <div class="vocab-attribution">Dictionary data by <a href="https://freedictionaryapi.com/" target="_blank" rel="noopener">FreeDictionaryAPI.com</a>, sourced from <a href="https://en.wiktionary.org/" target="_blank" rel="noopener">Wiktionary</a>.</div>
+</div>
+
+<!-- ── FLASHCARD GAME SCREEN ──────────────────────────────── -->
+<div id="flashcardScreen" class="screen">
+  <div class="flash-topbar">
+    <button class="btn-close" onclick="exitFlashcards()">✕</button>
+    <div class="flash-title">🃏 Hebrew Flashcards</div>
+    <div class="flash-progress-text" id="flashProgressText">1 / 1</div>
+  </div>
+  <div class="flash-progress-bar-wrap"><div class="flash-progress-bar-fill" id="flashProgressFill" style="width:0%"></div></div>
+  <div class="flash-card-area" id="flashCardArea"></div>
+</div>
+
+<!-- ── CONJUGATION SCREEN ────────────────────────────────── -->
+<div id="conjugationScreen" class="screen">
+  <div class="flash-topbar">
+    <button class="btn-close" onclick="exitConjugation()">✕</button>
+    <div class="flash-title" id="conjTitle">📝 Verb Conjugation</div>
+    <button class="lang-switch-btn" id="conjPracticeToggle" onclick="toggleConjPractice()">🎯 Practice</button>
+  </div>
+  <div class="conj-search-row" id="conjSearchRow">
+    <input id="conjVerbInput" class="word-card-input" type="text" placeholder="Type a verb…" autocomplete="off" autocorrect="off" spellcheck="false">
+    <button class="vocab-action-btn" onclick="searchConjVerb()">🔍 Show</button>
+  </div>
+  <div class="conj-search-status" id="conjSearchStatus"></div>
+  <div class="conj-tense-tabs" id="conjTenseTabs"></div>
+  <div class="conj-table-wrap" id="conjTableWrap"></div>
+  <div class="flash-card-area" id="conjPracticeArea" style="display:none"></div>
+</div>
+
+<!-- ── TRANSLATE GAME SCREEN ─────────────────────────────── -->
+<div id="translateScreen" class="screen">
+  <div class="flash-topbar">
+    <button class="btn-close" onclick="exitTranslate()">✕</button>
+    <div class="flash-title" id="transTitle">🌐 Translate</div>
+    <div class="flash-progress-text" id="transProgressText">1 / 1</div>
+  </div>
+  <div class="flash-progress-bar-wrap"><div class="flash-progress-bar-fill" id="transProgressFill" style="width:0%"></div></div>
+  <div class="flash-card-area" id="transCardArea"></div>
 </div>
 
 <!-- Streak modal -->
@@ -708,9 +1452,44 @@ html, body {
 // ═══════════════════════════════════════════════════════════════
 // STATE
 // ═══════════════════════════════════════════════════════════════
-let state = {
+const PROGRESS_STORAGE_KEY = 'myLanguageTeacherProgress_v1';
+
+const DEFAULT_STATE = {
   xp: 0, streak: 1, gems: 50, level: 1,
-  lessonProgress: {}, // unitId_lessonIdx -> completed
+  currentLang: 'pt',
+  lessonProgress: {},
+};
+
+function loadProgress() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(PROGRESS_STORAGE_KEY));
+    if (saved && typeof saved === 'object') {
+      return {
+        ...DEFAULT_STATE,
+        xp: Number.isFinite(saved.xp) ? saved.xp : DEFAULT_STATE.xp,
+        streak: Number.isFinite(saved.streak) ? saved.streak : DEFAULT_STATE.streak,
+        gems: Number.isFinite(saved.gems) ? saved.gems : DEFAULT_STATE.gems,
+        currentLang: saved.currentLang === 'he' ? 'he' : 'pt',
+        lessonProgress: saved.lessonProgress && typeof saved.lessonProgress === 'object'
+          ? saved.lessonProgress
+          : {},
+      };
+    }
+  } catch (error) {}
+  return { ...DEFAULT_STATE, lessonProgress: {} };
+}
+
+function saveProgress() {
+  try {
+    const { xp, streak, gems, currentLang, lessonProgress } = state;
+    localStorage.setItem(PROGRESS_STORAGE_KEY, JSON.stringify({
+      xp, streak, gems, currentLang, lessonProgress,
+    }));
+  } catch (error) {}
+}
+
+let state = {
+  ...loadProgress(),
   currentLesson: null,
   questionIdx: 0,
   hearts: 3, maxHearts: 3,
@@ -718,6 +1497,7 @@ let state = {
   wrongCount: 0,
   answered: false,
 };
+saveProgress();
 
 // ═══════════════════════════════════════════════════════════════
 // CURRICULUM
@@ -764,6 +1544,48 @@ const UNITS = [
   },
 ];
 
+const HEBREW_UNITS = [
+  {
+    id: 'he_basics',
+    name: 'Basics 1',
+    desc: 'Greetings & essentials',
+    icon: '👋',
+    color: '#58CC02',
+    lessons: [
+      { name: 'Hello!', icon: '🌟', questions: makeLesson_he_greetings() },
+      { name: 'Numbers', icon: '🔢', questions: makeLesson_he_numbers() },
+      { name: 'Colors', icon: '🎨', questions: makeLesson_he_colors() },
+      { name: 'Review', icon: '⭐', questions: makeLesson_he_review1() },
+    ]
+  },
+  {
+    id: 'he_food',
+    name: 'Food & Drink',
+    desc: 'Israeli cuisine',
+    icon: '🍽️',
+    color: '#FF9600',
+    lessons: [
+      { name: 'Fruits', icon: '🍎', questions: makeLesson_he_fruits() },
+      { name: 'Drinks', icon: '☕', questions: makeLesson_he_drinks() },
+      { name: 'Restaurant', icon: '🍴', questions: makeLesson_he_restaurant() },
+      { name: 'Review', icon: '⭐', questions: makeLesson_he_reviewFood() },
+    ]
+  },
+  {
+    id: 'he_daily',
+    name: 'Daily Life',
+    desc: 'Family, home & time',
+    icon: '🏠',
+    color: '#1CB0F6',
+    lessons: [
+      { name: 'Family', icon: '👨‍👩‍👧', questions: makeLesson_he_family() },
+      { name: 'Home', icon: '🏠', questions: makeLesson_he_home() },
+      { name: 'Time', icon: '⏰', questions: makeLesson_he_time() },
+      { name: 'Review', icon: '⭐', questions: makeLesson_he_reviewDaily() },
+    ]
+  },
+];
+
 // ═══════════════════════════════════════════════════════════════
 // QUESTION FACTORIES
 // ═══════════════════════════════════════════════════════════════
@@ -794,16 +1616,16 @@ function makeLesson_greetings() {
       ['Thank you','Sorry','Please','Excuse me'], 0),
     q_match([
       {pt:'Olá', en:'Hello'},
-      {pt:'Tchau', en:'Goodbye'},
+      {pt:'Adeus', en:'Goodbye'},
       {pt:'Sim', en:'Yes'},
       {pt:'Não', en:'No'},
     ]),
     q_mc('What is "Por favor"?',
       [{e:'❓', t:'Why?', s:''},{e:'🙏', t:'Please', s:''},{e:'😅', t:'Sorry', s:''},{e:'👍', t:'OK', s:''}], 1),
-    q_type('How do you write "goodbye" in Portuguese?', 'tchau', 'Type in Portuguese'),
-    q_mc('"Como vai você?" means:',
+    q_type('How do you write "goodbye" in Portuguese?', 'adeus', 'Type in Portuguese'),
+    q_mc('"Como estás?" means:',
       [{e:'🤔', t:'What is your name?', s:''},{e:'😀', t:'How are you?', s:''},{e:'📍', t:'Where are you from?', s:''},{e:'🕐', t:'What time is it?', s:''}], 1),
-    q_build('My name is...', ['Meu','nome','é','...'], ['Meu','nome','é','...']),
+    q_build('My name is...', ['O','meu','nome','é','...'], ['O','meu','nome','é','...']),
   ];
 }
 
@@ -944,6 +1766,170 @@ function makeLesson_reviewTravel() {
 }
 
 // ═══════════════════════════════════════════════════════════════
+// HEBREW LESSON FACTORIES
+// ═══════════════════════════════════════════════════════════════
+
+function makeLesson_he_greetings() {
+  return [
+    q_mc('What does "שָׁלוֹם" mean?',
+      [{e:'👋', t:'Hello / Peace'},{e:'🙏', t:'Thank you'},{e:'✋', t:'Goodbye'},{e:'🌅', t:'Good morning'}], 0),
+    q_mc('How do you say "Thank you"?',
+      [{e:'🙏', t:'תּוֹדָה', s:'todah'},{e:'👋', t:'שָׁלוֹם', s:'shalom'},{e:'✅', t:'כֵּן', s:'ken'},{e:'❌', t:'לֹא', s:'lo'}], 0),
+    q_listen('תּוֹדָה', 'Thank you',
+      ['Hello','Thank you','Yes','No'], 1),
+    q_match([
+      {pt:'שָׁלוֹם', en:'Hello / Peace'},
+      {pt:'תּוֹדָה', en:'Thank you'},
+      {pt:'כֵּן', en:'Yes'},
+      {pt:'לֹא', en:'No'},
+    ]),
+    q_mc('What does "סְלִיחָה" mean?',
+      [{e:'😅', t:'Sorry / Excuse me'},{e:'🙏', t:'Please'},{e:'👍', t:'OK'},{e:'😊', t:'Welcome'}], 0),
+    q_type('What is the English for "שָׁלוֹם"?', 'hello', 'Type the English meaning'),
+    q_mc('"בְּבַקָּשָׁה" means:',
+      [{e:'🙏', t:'Please / You\'re welcome'},{e:'😊', t:'Thank you'},{e:'👋', t:'Hello'},{e:'❓', t:'What?'}], 0),
+    q_mc('How do you say "Goodbye"?',
+      [{e:'👋', t:'לְהִתְרָאוֹת', s:'lehitraot'},{e:'🌅', t:'בֹּקֶר טוֹב', s:'boker tov'},{e:'🌙', t:'לַיְלָה טוֹב', s:'layla tov'},{e:'✨', t:'שָׁלוֹם', s:'shalom'}], 0),
+  ];
+}
+
+function makeLesson_he_numbers() {
+  return [
+    q_mc('"שָׁלוֹשׁ" means:',
+      [{e:'2️⃣', t:'Two'},{e:'3️⃣', t:'Three'},{e:'4️⃣', t:'Four'},{e:'5️⃣', t:'Five'}], 1),
+    q_listen('עֶשֶׂר', 'Ten',
+      ['Seven','Eight','Nine','Ten'], 3),
+    q_match([
+      {pt:'אֶחָד', en:'One'},
+      {pt:'חָמֵשׁ', en:'Five'},
+      {pt:'עֶשֶׂר', en:'Ten'},
+      {pt:'עֶשְׂרִים', en:'Twenty'},
+    ]),
+    q_mc('How do you say "100"?',
+      [{e:'💯', t:'מֵאָה'},{e:'🔟', t:'עֶשֶׂר'},{e:'5️⃣0️⃣', t:'חֲמִישִּׁים'},{e:'2️⃣0️⃣', t:'עֶשְׂרִים'}], 0),
+    q_type('What is the English for "שְׁנַיִם"?', 'two', 'Type the English meaning'),
+    q_mc('"חֲמִישָּׁה עָשָׂר" means:', [{e:'1️⃣3️⃣', t:'Thirteen'},{e:'1️⃣4️⃣', t:'Fourteen'},{e:'1️⃣5️⃣', t:'Fifteen'},{e:'1️⃣6️⃣', t:'Sixteen'}], 2),
+    q_listen('שֶׁבַע', 'Seven', ['Four','Five','Six','Seven'], 3),
+  ];
+}
+
+function makeLesson_he_colors() {
+  return [
+    q_mc('"אָדֹם" means:',
+      [{e:'🔴', t:'Red'},{e:'🔵', t:'Blue'},{e:'🟡', t:'Yellow'},{e:'🟢', t:'Green'}], 0),
+    q_listen('כָּחֹל', 'Blue', ['Green','Blue','Yellow','Red'], 1),
+    q_match([
+      {pt:'לָבָן', en:'White'},
+      {pt:'שָׁחֹר', en:'Black'},
+      {pt:'יָרֹק', en:'Green'},
+      {pt:'צָהֹב', en:'Yellow'},
+    ]),
+    q_mc('What color is "סָגֹל"?',
+      [{e:'🟠', t:'Orange'},{e:'🟣', t:'Purple'},{e:'🟤', t:'Brown'},{e:'⚫', t:'Black'}], 1),
+    q_type('What is the English for "לָבָן"?', 'white', 'Type the English meaning'),
+    q_mc('"כָּתֹם" means:', [{e:'🟤', t:'Brown'},{e:'🔵', t:'Blue'},{e:'🟠', t:'Orange'},{e:'⚪', t:'White'}], 2),
+  ];
+}
+
+function makeLesson_he_review1() {
+  return [
+    q_mc('How do you say "Good night"?',
+      [{e:'🌙', t:'לַיְלָה טוֹב'},{e:'🌅', t:'בֹּקֶר טוֹב'},{e:'🌤️', t:'צָהֳרַיִם טוֹבִים'},{e:'✨', t:'עֶרֶב טוֹב'}], 0),
+    q_mc('"שֵׁשׁ" means:', [{e:'5️⃣', t:'Five'},{e:'6️⃣', t:'Six'},{e:'7️⃣', t:'Seven'},{e:'8️⃣', t:'Eight'}], 1),
+    q_listen('תּוֹדָה', 'Thank you', ['Sorry','Please','Thank you','Hello'], 2),
+    q_match([{pt:'שָׁלוֹם', en:'Hello'},{pt:'כָּחֹל', en:'Blue'},{pt:'שָׁלוֹשׁ', en:'Three'},{pt:'יָרֹק', en:'Green'}]),
+    q_type('What is the English for "אָדֹם"?', 'red', 'Type the English meaning'),
+    q_mc('"עַל לֹא דָּבָר" means:', [{e:'🙏', t:'Thank you'},{e:'😊', t:'You\'re welcome'},{e:'❓', t:'No problem'},{e:'👋', t:'See you'}], 1),
+  ];
+}
+
+function makeLesson_he_fruits() {
+  return [
+    q_mc('"תַּפּוּחַ" means:', [{e:'🍎', t:'Apple'},{e:'🍊', t:'Orange'},{e:'🍋', t:'Lemon'},{e:'🍇', t:'Grape'}], 0),
+    q_listen('בָּנָנָה', 'Banana', ['Mango','Pear','Banana','Cherry'], 2),
+    q_match([{pt:'מַנְגּוֹ', en:'Mango'},{pt:'עֵנָב', en:'Grape'},{pt:'תּוּת', en:'Strawberry'},{pt:'לִימוֹן', en:'Lemon'}]),
+    q_mc('"אֲנָנָס" means:', [{e:'🍍', t:'Pineapple'},{e:'🥭', t:'Mango'},{e:'🍈', t:'Melon'},{e:'🥝', t:'Kiwi'}], 0),
+    q_type('What is the English for "תַּפּוּחַ"?', 'apple', 'Type the English meaning'),
+    q_mc('What is "אַגָּס"?', [{e:'🍐', t:'Pear'},{e:'🍑', t:'Peach'},{e:'🍒', t:'Cherry'},{e:'🍓', t:'Strawberry'}], 0),
+  ];
+}
+
+function makeLesson_he_drinks() {
+  return [
+    q_mc('"מַיִם" means:', [{e:'💧', t:'Water'},{e:'🧃', t:'Juice'},{e:'🥛', t:'Milk'},{e:'🍵', t:'Tea'}], 0),
+    q_listen('קָפֶה', 'Coffee', ['Tea','Juice','Coffee','Milk'], 2),
+    q_match([{pt:'מַיִם', en:'Water'},{pt:'חָלָב', en:'Milk'},{pt:'מִיץ', en:'Juice'},{pt:'יַיִן', en:'Wine'}]),
+    q_mc('How do you say "beer" in Hebrew?', [{e:'🍺', t:'בִּירָה'},{e:'🍷', t:'יַיִן'},{e:'🥤', t:'שֶׁתְיִיָּה'},{e:'☕', t:'קָפֶה'}], 0),
+    q_type('What is the English for "מַיִם"?', 'water', 'Type the English meaning'),
+    q_mc('"חוּמוּס" is a famous Israeli:', [{e:'🥙', t:'Dip / Spread'},{e:'🍹', t:'Cocktail'},{e:'🎶', t:'Song'},{e:'🕺', t:'Dance'}], 0),
+  ];
+}
+
+function makeLesson_he_restaurant() {
+  return [
+    q_mc('"הַחֶשְׁבּוֹן, בְּבַקָּשָׁה" means:', [{e:'🍽️', t:'The menu, please'},{e:'💳', t:'The bill, please'},{e:'🪑', t:'A table, please'},{e:'🧂', t:'The salt, please'}], 1),
+    q_listen('תַּפְרִיט', 'Menu', ['Menu','Table','Bill','Waiter'], 0),
+    q_match([{pt:'מֶלְצַר', en:'Waiter'},{pt:'שׁוּלְחָן', en:'Table'},{pt:'חֶשְׁבּוֹן', en:'Bill'},{pt:'צַלַּחַת', en:'Plate'}]),
+    q_mc('How do you say "I\'m hungry"?', [{e:'😋', t:'אֲנִי רָעֵב'},{e:'😴', t:'אֲנִי עָיֵף'},{e:'😰', t:'אֲנִי צָמֵא'},{e:'😊', t:'אֲנִי בְּסֵדֶר'}], 0),
+    q_type('What is the English for "שׁוּלְחָן"?', 'table', 'Type the English meaning'),
+    q_mc('"טָעִים!" means:', [{e:'😍', t:'Delicious!'},{e:'😬', t:'Terrible!'},{e:'🤔', t:'Strange!'},{e:'😐', t:'OK'}], 0),
+  ];
+}
+
+function makeLesson_he_reviewFood() {
+  return [
+    q_mc('"אֲנָנָס" is:', [{e:'🍍', t:'Pineapple'},{e:'🥭', t:'Mango'},{e:'🍎', t:'Apple'},{e:'🍊', t:'Orange'}], 0),
+    q_listen('יַיִן', 'Wine', ['Beer','Juice','Wine','Water'], 2),
+    q_match([{pt:'תַּפּוּחַ', en:'Apple'},{pt:'קָפֶה', en:'Coffee'},{pt:'שׁוּלְחָן', en:'Table'},{pt:'רָעָב', en:'Hunger'}]),
+    q_type('What is the English for "מַיִם"?', 'water', 'Type the English meaning'),
+    q_mc('"בִּירָה" means:', [{e:'🍵', t:'Tea'},{e:'🍺', t:'Beer'},{e:'🧃', t:'Juice'},{e:'🥛', t:'Milk'}], 1),
+  ];
+}
+
+function makeLesson_he_family() {
+  return [
+    q_mc('"אָב" means:', [{e:'👨', t:'Father'},{e:'👩', t:'Mother'},{e:'👦', t:'Son'},{e:'👧', t:'Daughter'}], 0),
+    q_listen('אֵם', 'Mother', ['Father','Mother','Brother','Sister'], 1),
+    q_match([{pt:'אָח', en:'Brother'},{pt:'אָחוֹת', en:'Sister'},{pt:'סָבָא', en:'Grandfather'},{pt:'סָבְתָא', en:'Grandmother'}]),
+    q_mc('How do you say "family" in Hebrew?', [{e:'👨‍👩‍👧‍👦', t:'מִשְׁפָּחָה'},{e:'👥', t:'חֲבֵרִים'},{e:'🏫', t:'בֵּית סֵפֶר'},{e:'🏠', t:'בַּיִת'}], 0),
+    q_type('What is the English for "אָח"?', 'brother', 'Type the English meaning'),
+    q_mc('"יֶלֶד" means:', [{e:'👦', t:'Boy / Child'},{e:'👧', t:'Girl'},{e:'👶', t:'Baby'},{e:'👴', t:'Old man'}], 0),
+  ];
+}
+
+function makeLesson_he_home() {
+  return [
+    q_mc('"בַּיִת" means:', [{e:'🏠', t:'House'},{e:'🚪', t:'Door'},{e:'🪟', t:'Window'},{e:'🛏️', t:'Bed'}], 0),
+    q_listen('דֶּלֶת', 'Door', ['House','Door','Window','Kitchen'], 1),
+    q_match([{pt:'מִטְבָּח', en:'Kitchen'},{pt:'חֶדֶר', en:'Room'},{pt:'חַדַּר אֹכֶל', en:'Dining room'},{pt:'גַּן', en:'Garden'}]),
+    q_mc('How do you say "chair" in Hebrew?', [{e:'🪑', t:'כִּסֵּא'},{e:'🛋️', t:'סַפָּה'},{e:'🪞', t:'מַרְאָה'},{e:'🚿', t:'מִקְלַחַת'}], 0),
+    q_type('What is the English for "בַּיִת"?', 'house', 'Type the English meaning'),
+    q_mc('"שׁוּלְחָן" means:', [{e:'🪑', t:'Chair'},{e:'🛋️', t:'Sofa'},{e:'🗄️', t:'Table'},{e:'🛏️', t:'Bed'}], 2),
+  ];
+}
+
+function makeLesson_he_time() {
+  return [
+    q_mc('"יוֹם" means:', [{e:'☀️', t:'Day'},{e:'🌙', t:'Night'},{e:'📅', t:'Week'},{e:'📆', t:'Month'}], 0),
+    q_listen('לַיְלָה', 'Night', ['Day','Night','Morning','Evening'], 1),
+    q_match([{pt:'בֹּקֶר', en:'Morning'},{pt:'עֶרֶב', en:'Evening'},{pt:'שָׁבוּעַ', en:'Week'},{pt:'חֹדֶשׁ', en:'Month'}]),
+    q_mc('How do you say "today" in Hebrew?', [{e:'📅', t:'הַיּוֹם'},{e:'⬅️', t:'אֶתְמוֹל'},{e:'➡️', t:'מָחָר'},{e:'🔄', t:'עַכְשָׁיו'}], 0),
+    q_type('What is the English for "יוֹם"?', 'day', 'Type the English meaning'),
+    q_mc('"מָחָר" means:', [{e:'⬅️', t:'Yesterday'},{e:'📅', t:'Today'},{e:'➡️', t:'Tomorrow'},{e:'🔄', t:'Now'}], 2),
+  ];
+}
+
+function makeLesson_he_reviewDaily() {
+  return [
+    q_mc('"אֵם" means:', [{e:'👨', t:'Father'},{e:'👩', t:'Mother'},{e:'👦', t:'Son'},{e:'👧', t:'Daughter'}], 1),
+    q_listen('בַּיִת', 'House', ['House','Room','Kitchen','Garden'], 0),
+    q_match([{pt:'אָח', en:'Brother'},{pt:'כִּסֵּא', en:'Chair'},{pt:'בֹּקֶר', en:'Morning'},{pt:'מָחָר', en:'Tomorrow'}]),
+    q_type('What is the English for "לַיְלָה"?', 'night', 'Type the English meaning'),
+    q_mc('"מִשְׁפָּחָה" means:', [{e:'👤', t:'Person'},{e:'👨‍👩‍👧‍👦', t:'Family'},{e:'👥', t:'Friends'},{e:'🏫', t:'School'}], 1),
+  ];
+}
+
+// ═══════════════════════════════════════════════════════════════
 // UI HELPERS
 // ═══════════════════════════════════════════════════════════════
 function showScreen(id) {
@@ -974,7 +1960,9 @@ function renderHearts() {
 function renderUnits() {
   const container = document.getElementById('unitsContainer');
   container.innerHTML = '';
-  UNITS.forEach((unit, uIdx) => {
+
+  const units = state.currentLang === 'he' ? HEBREW_UNITS : UNITS;
+  units.forEach((unit, uIdx) => {
     const section = document.createElement('div');
     section.className = 'unit-section';
 
@@ -983,23 +1971,23 @@ function renderUnits() {
     const pct  = Math.round((done / unit.lessons.length) * 100);
 
     // Unit is unlocked if it's the first or previous unit has >=2 lessons done
-    const prevUnit = UNITS[uIdx - 1];
-    const unlocked = uIdx === 0 || (prevUnit && UNITS[uIdx-1].lessons.filter((_,li) => state.lessonProgress[`${prevUnit.id}_${li}`]).length >= 2);
+    const prevUnit = units[uIdx - 1];
+    const unlocked = uIdx === 0 || (prevUnit && units[uIdx-1].lessons.filter((_,li) => state.lessonProgress[`${prevUnit.id}_${li}`]).length >= 2);
 
     section.innerHTML = `
-      <div class="unit-header">
-        <div class="unit-icon" style="background:${unit.color}22">${unit.icon}</div>
-        <div class="unit-info">
-          <div class="unit-name">${unit.name} ${unlocked ? '' : '🔒'}</div>
-          <div class="unit-desc">${unit.desc}</div>
-          <div class="unit-progress-bar">
-            <div class="unit-progress-fill" style="width:${pct}%"></div>
+        <div class="unit-header">
+          <div class="unit-icon" style="background:${unit.color}22">${unit.icon}</div>
+          <div class="unit-info">
+            <div class="unit-name">${unit.name} ${unlocked ? '' : '🔒'}</div>
+            <div class="unit-desc">${unit.desc}</div>
+            <div class="unit-progress-bar">
+              <div class="unit-progress-fill" style="width:${pct}%"></div>
+            </div>
           </div>
+          <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.6)">${done}/${unit.lessons.length}</div>
         </div>
-        <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.6)">${done}/${unit.lessons.length}</div>
-      </div>
-      <div class="lessons-grid" id="lessons_${unit.id}"></div>
-    `;
+        <div class="lessons-grid" id="lessons_${unit.id}"></div>
+      `;
     container.appendChild(section);
 
     const grid = document.getElementById(`lessons_${unit.id}`);
@@ -1019,6 +2007,38 @@ function renderUnits() {
       grid.appendChild(btn);
     });
   });
+
+  renderFlashcardHomeSection(container);
+}
+
+function renderFlashcardHomeSection(container) {
+  const wd = loadVocab();
+  const wordCount = wd.words.length;
+  const pct = Math.min(100, Math.round((wordCount / 30) * 100));
+  const langDesc = state.currentLang === 'pt' ? 'Build your Portuguese vocabulary' : 'Build your Hebrew vocabulary';
+
+  const section = document.createElement('div');
+  section.className = 'unit-section';
+  section.innerHTML = `
+    <div class="unit-header" style="cursor:default">
+      <div class="unit-icon" style="background:#ce82ff22">📚</div>
+      <div class="unit-info">
+        <div class="unit-name">Vocabulary</div>
+        <div class="unit-desc">${langDesc}</div>
+        <div class="unit-progress-bar">
+          <div class="unit-progress-fill" style="width:${pct}%;background:var(--purple)"></div>
+        </div>
+      </div>
+      <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.6)">${wordCount} words</div>
+    </div>
+    <div class="lessons-grid" style="padding:0 4px 4px">
+      <button class="lesson-btn" style="background:var(--purple);box-shadow:var(--shadow) var(--purple-d)" onclick="openVocab()" title="Word List">📚</button>
+      <button class="lesson-btn active" onclick="openVocabAndPlay()" title="Flashcards">🃏</button>
+      <button class="lesson-btn" style="background:var(--blue);box-shadow:var(--shadow) var(--blue-d)" onclick="openConjugation()" title="Verb Conjugation">📝</button>
+      <button class="lesson-btn" style="background:var(--orange);box-shadow:var(--shadow) #c06000" onclick="startTranslate()" title="Translate">🌐</button>
+    </div>
+  `;
+  container.appendChild(section);
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -1422,6 +2442,7 @@ function finishLesson() {
   const key = `${lessonUnit.id}_${lessonLessonIdx}`;
   state.lessonProgress[key] = true;
   state.streak = Math.min(state.streak + 1, 99);
+  saveProgress();
   updateProgress();
 
   const total = state.currentLesson.questions.length;
@@ -1489,6 +2510,27 @@ function spawnXPPopup(anchor, xp = null) {
   setTimeout(() => popup.remove(), 1400);
 }
 
+function switchLanguage() {
+  state.currentLang = state.currentLang === 'pt' ? 'he' : 'pt';
+  saveProgress();
+  vocabData = loadVocab();
+  updateHomeForLanguage();
+}
+
+function updateHomeForLanguage() {
+  const isHe = state.currentLang === 'he';
+  document.querySelector('.flag-emoji').textContent = isHe ? '🇮🇱' : '🇵🇹';
+  document.querySelector('.hero-title').innerHTML = isHe
+    ? 'Learn <span class="pt">עברית</span><br>the fun way!'
+    : 'Learn <span class="pt">Português</span><br>the fun way!';
+  document.querySelector('.hero-sub').textContent = isHe
+    ? 'Quick lessons · Real phrases · Shalom!'
+    : 'Quick lessons · Real phrases · From Lisbon with love';
+  document.getElementById('langSwitchBtn').innerHTML = isHe ? '🇮🇱 HE' : '🇵🇹 PT';
+  renderUnits();
+  updateHomeStats();
+}
+
 function openModal(id) {
   document.getElementById(id).classList.add('show');
 }
@@ -1497,10 +2539,1535 @@ function closeModal(id) {
 }
 
 // ═══════════════════════════════════════════════════════════════
+// VOCABULARY — PERSISTENCE & DATA
+// ═══════════════════════════════════════════════════════════════
+function getVocabKey() {
+  return state.currentLang === 'pt' ? 'ptVocab_v1' : 'hebrewVocab_v1';
+}
+
+const HE_WORD_SUGGESTIONS = [
+  { word: 'שָׁלוֹם',   english: 'Hello / Peace',         transliteration: 'shalom'  },
+  { word: 'תּוֹדָה',   english: 'Thank you',              transliteration: 'todah'   },
+  { word: 'כֵּן',      english: 'Yes',                    transliteration: 'ken'     },
+  { word: 'לֹא',       english: 'No',                     transliteration: 'lo'      },
+  { word: 'מַיִם',    english: 'Water',                   transliteration: 'mayim'   },
+  { word: 'לֶחֶם',    english: 'Bread',                   transliteration: 'lechem'  },
+  { word: 'בַּיִת',   english: 'House',                   transliteration: 'bayit'   },
+  { word: 'סֵפֶר',    english: 'Book',                    transliteration: 'sefer'   },
+  { word: 'יֶלֶד',    english: 'Child / Boy',             transliteration: 'yeled'   },
+  { word: 'אֹכֶל',    english: 'Food',                    transliteration: 'ochel'   },
+  { word: 'יוֹם',     english: 'Day',                     transliteration: 'yom'     },
+  { word: 'לַיְלָה',  english: 'Night',                   transliteration: 'layla'   },
+  { word: 'שֶׁמֶשׁ',  english: 'Sun',                     transliteration: 'shemesh' },
+  { word: 'יָרֵחַ',   english: 'Moon',                    transliteration: 'yareach' },
+  { word: 'כֶּלֶב',   english: 'Dog',                     transliteration: 'kelev'   },
+  { word: 'חָתוּל',   english: 'Cat',                     transliteration: 'chatul'  },
+  { word: 'אָדֹם',    english: 'Red',                     transliteration: 'adom', type: 'adjective' },
+  { word: 'כָּחֹל',   english: 'Blue',                    transliteration: 'kachol'  },
+  { word: 'גָּדוֹל',  english: 'Big / Large',             transliteration: 'gadol'   },
+  { word: 'קָטָן',    english: 'Small / Little',          transliteration: 'katan'   },
+  { word: 'אִישׁ',    english: 'Man',                     transliteration: 'ish'     },
+  { word: 'אִשָּׁה',  english: 'Woman',                   transliteration: 'ishah'   },
+  { word: 'אֲנִי',    english: 'I / Me',                  transliteration: 'ani'     },
+  { word: 'אַתָּה',   english: 'You (masculine)',         transliteration: 'atah'    },
+  { word: 'אוֹהֵב',   english: 'Love / Like',             transliteration: 'ohev'    },
+  { word: 'טוֹב',     english: 'Good',                    transliteration: 'tov'     },
+  { word: 'יָפֶה',    english: 'Beautiful / Nice',        transliteration: 'yafe'    },
+  { word: 'עִיר',     english: 'City',                    transliteration: 'ir'      },
+  { word: 'אֶרֶץ',    english: 'Country / Land',          transliteration: 'eretz'   },
+  { word: 'שָׁנָה',   english: 'Year',                    transliteration: 'shana'   },
+  { word: 'מְהֵר',    english: 'Quickly',                 transliteration: 'meher',   type: 'adverb', topics: ['movement'] },
+  { word: 'לְאַט',    english: 'Slowly',                  transliteration: 'leat',    type: 'adverb', topics: ['movement'] },
+  { word: 'תָּמִיד',   english: 'Always',                  transliteration: 'tamid',   type: 'adverb', topics: ['time'] },
+  { word: 'עַכְשָׁו',  english: 'Now',                     transliteration: 'achshav', type: 'adverb', topics: ['time'] },
+  { word: 'לִכְתּוֹב', english: 'To write',                transliteration: 'lichtov', type: 'verb', topics: ['communication'] },
+  { word: 'לִקְרֹא',  english: 'To read',                 transliteration: 'likro',   type: 'verb', topics: ['communication'] },
+  { word: 'לִשְׁתּוֹת', english: 'To drink',              transliteration: 'lishtot', type: 'verb', topics: ['food'] },
+  { word: 'לִישׁוֹן', english: 'To sleep',                transliteration: 'lishon',  type: 'verb', topics: ['daily life'] },
+  { word: 'חָדָשׁ',   english: 'New',                     transliteration: 'chadash', type: 'adjective', topics: ['description'] },
+  { word: 'מָהִיר',   english: 'Fast',                    transliteration: 'mahir',   type: 'adjective', topics: ['movement'] },
+];
+
+const PT_WORD_SUGGESTIONS = [
+  { word: 'Olá',        english: 'Hello',                  transliteration: '' },
+  { word: 'Obrigado',   english: 'Thank you (m)',           transliteration: '' },
+  { word: 'Por favor',  english: 'Please',                  transliteration: '' },
+  { word: 'Sim',        english: 'Yes',                     transliteration: '' },
+  { word: 'Não',        english: 'No',                      transliteration: '' },
+  { word: 'Água',       english: 'Water',                   transliteration: '' },
+  { word: 'Pão',        english: 'Bread',                   transliteration: '' },
+  { word: 'Casa',       english: 'House',                   transliteration: '' },
+  { word: 'Livro',      english: 'Book',                    transliteration: '' },
+  { word: 'Criança',    english: 'Child',                   transliteration: '' },
+  { word: 'Comida',     english: 'Food',                    transliteration: '' },
+  { word: 'Dia',        english: 'Day',                     transliteration: '' },
+  { word: 'Noite',      english: 'Night',                   transliteration: '' },
+  { word: 'Sol',        english: 'Sun',                     transliteration: '' },
+  { word: 'Lua',        english: 'Moon',                    transliteration: '' },
+  { word: 'Cão',        english: 'Dog',                     transliteration: '' },
+  { word: 'Gato',       english: 'Cat',                     transliteration: '' },
+  { word: 'Vermelho',   english: 'Red',                     transliteration: '' },
+  { word: 'Azul',       english: 'Blue',                    transliteration: '' },
+  { word: 'Grande',     english: 'Big / Large',             transliteration: '' },
+  { word: 'Pequeno',    english: 'Small / Little',          transliteration: '' },
+  { word: 'Homem',      english: 'Man',                     transliteration: '' },
+  { word: 'Mulher',     english: 'Woman',                   transliteration: '' },
+  { word: 'Eu',         english: 'I / Me',                  transliteration: '' },
+  { word: 'Tu',         english: 'You',                     transliteration: '' },
+  { word: 'Bom',        english: 'Good',                    transliteration: '' },
+  { word: 'Bonito',     english: 'Beautiful / Nice',        transliteration: '' },
+  { word: 'Cidade',     english: 'City',                    transliteration: '' },
+  { word: 'País',       english: 'Country',                 transliteration: '' },
+  { word: 'Ano',        english: 'Year',                    transliteration: '' },
+  { word: 'Rapidamente', english: 'Quickly',                transliteration: '', type: 'adverb', topics: ['movement'] },
+  { word: 'Devagar',     english: 'Slowly',                 transliteration: '', type: 'adverb', topics: ['movement'] },
+  { word: 'Sempre',      english: 'Always',                 transliteration: '', type: 'adverb', topics: ['time'] },
+  { word: 'Agora',       english: 'Now',                    transliteration: '', type: 'adverb', topics: ['time'] },
+  { word: 'Escrever',    english: 'To write',               transliteration: '', type: 'verb', topics: ['communication'] },
+  { word: 'Ler',         english: 'To read',                transliteration: '', type: 'verb', topics: ['communication'] },
+  { word: 'Beber',       english: 'To drink',               transliteration: '', type: 'verb', topics: ['food'] },
+  { word: 'Dormir',      english: 'To sleep',               transliteration: '', type: 'verb', topics: ['daily life'] },
+  { word: 'Novo',        english: 'New',                    transliteration: '', type: 'adjective', topics: ['description'] },
+  { word: 'Rápido',      english: 'Fast',                   transliteration: '', type: 'adjective', topics: ['movement'] },
+];
+
+function migrateVocabData(data) {
+  const validTypes = ['noun', 'verb', 'adjective', 'adverb', 'preposition', 'pronoun', 'conjunction', 'interjection', 'phrase'];
+  if (!Array.isArray(data.words)) data.words = [];
+  data.words = data.words.map(w => {
+    if (w.word === undefined && w.hebrew !== undefined) {
+      w = { ...w, word: w.hebrew };
+    }
+    return { ...w, type: validTypes.includes(w.type) ? w.type : 'noun' };
+  });
+  if (!Array.isArray(data.declined)) data.declined = [];
+  return data;
+}
+
+function loadVocab() {
+  try {
+    const saved = localStorage.getItem(getVocabKey());
+    if (saved) return migrateVocabData(JSON.parse(saved));
+  } catch(e) {}
+  return { words: [], declined: [] };
+}
+
+function saveVocab() {
+  try { localStorage.setItem(getVocabKey(), JSON.stringify(vocabData)); } catch(e) {}
+}
+
+let vocabData = loadVocab();
+let vocabLastAdded = null;
+
+const REMOTE_SUGGESTION_CONFIG = {
+  pt: { dictionaryLanguage: 'pt', wordListUrl: 'https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/pt/pt_50k.txt' },
+  he: { dictionaryLanguage: 'he', wordListUrl: 'https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/he/he_50k.txt' },
+};
+const REMOTE_SUGGESTION_LIMIT = 5;
+const REMOTE_SUGGESTION_CACHE_MS = 30 * 60 * 1000;
+const remoteSuggestionCache = { pt: null, he: null };
+const remoteSuggestionRequests = { pt: null, he: null };
+
+function suggestionPool(language = state.currentLang) {
+  const staticSuggestions = language === 'pt' ? PT_WORD_SUGGESTIONS : HE_WORD_SUGGESTIONS;
+  const remoteSuggestions = remoteSuggestionCache[language]?.suggestions || [];
+  const seen = new Set();
+  return [...staticSuggestions, ...remoteSuggestions].filter(suggestion => {
+    const key = suggestion.word.normalize('NFKC').trim().toLocaleLowerCase();
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function parseRemoteWordList(text, language) {
+  const staticWords = new Set((language === 'pt' ? PT_WORD_SUGGESTIONS : HE_WORD_SUGGESTIONS)
+    .map(suggestion => suggestion.word.normalize('NFKC').toLocaleLowerCase()));
+  const words = [];
+  const seen = new Set();
+  for (const line of text.split(/\r?\n/)) {
+    const word = line.trim().split(/\s+/)[0];
+    const key = word.normalize('NFKC').toLocaleLowerCase();
+    if (!word || word.length < 2 || /\d|[^\p{L}'-]/u.test(word) || staticWords.has(key) || seen.has(key)) continue;
+    seen.add(key);
+    words.push(word);
+    if (words.length >= REMOTE_SUGGESTION_LIMIT * 3) break;
+  }
+  return words;
+}
+
+async function fetchWithTimeout(url, signal) {
+  const response = await fetch(url, { signal });
+  if (!response.ok) throw new Error(`External vocabulary request failed: ${response.status}`);
+  return response;
+}
+
+async function lookupHebrewWord(word) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 12000);
+  try {
+    const lookupWord = stripNiqqud(word).normalize('NFKC').trim();
+    const endpoint = `https://freedictionaryapi.com/api/v1/entries/he/${encodeURIComponent(lookupWord)}?translations=true`;
+    const response = await fetchWithTimeout(endpoint, controller.signal);
+    const entry = mapDictionaryEntry(word, await response.json(), 'he');
+    // Inflected forms (e.g. "לשבור") are often glossed as "to-infinitive of שָׁבַר (shavár)." with no real
+    // translation — look up that referenced lemma instead so the user sees an actual meaning ("to break").
+    const lemma = entry && extractFormOfLemma(entry.definition);
+    if (lemma && lemma !== lookupWord) {
+      try {
+        const lemmaEndpoint = `https://freedictionaryapi.com/api/v1/entries/he/${encodeURIComponent(lemma)}?translations=true`;
+        const lemmaResponse = await fetchWithTimeout(lemmaEndpoint, controller.signal);
+        const lemmaEntry = mapDictionaryEntry(lemma, await lemmaResponse.json(), 'he', entry.partOfSpeech);
+        if (lemmaEntry) return { ...entry, english: lemmaEntry.english, definition: lemmaEntry.definition, topics: lemmaEntry.topics };
+      } catch (error) { /* fall back to the grammatical gloss below */ }
+    }
+    return entry;
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
+// Wiktionary glosses inflected forms as e.g. "to-infinitive of שָׁבַר (shavár)." — pull out the referenced lemma.
+function extractFormOfLemma(definition) {
+  const match = /\bof\s+([\u0590-\u05FF]+)/.exec(definition || '');
+  return match ? stripNiqqud(match[1]).normalize('NFKC').trim() : null;
+}
+
+// Reverse lookup: search the English dictionary entry for the typed meaning and pull out its
+// translation into the target language (pt/he), instead of looking up the target word directly.
+async function lookupEnglishTranslation(englishTerm, targetLang) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 12000);
+  try {
+    // Strip a leading "to " infinitive marker (e.g. "to break") since Wiktionary indexes verbs by their bare form.
+    const term = englishTerm.trim().toLowerCase().replace(/^to\s+/, '');
+    const endpoint = `https://freedictionaryapi.com/api/v1/entries/en/${encodeURIComponent(term)}?translations=true`;
+    const response = await fetchWithTimeout(endpoint, controller.signal);
+    return mapReverseDictionaryEntry(englishTerm, await response.json(), targetLang);
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
+function mapReverseDictionaryEntry(englishTerm, data, targetLang) {
+  const entries = Array.isArray(data?.entries) ? data.entries : [];
+  const validTypes = ['noun', 'verb', 'adjective', 'adverb', 'preposition', 'pronoun', 'conjunction', 'interjection', 'phrase'];
+  const findMatch = sense => (sense.translations || []).find(item => item.language?.code === targetLang && item.word);
+  for (const entry of entries) {
+    // Check the entry's main senses before its (usually more niche) subsenses, so common meanings win
+    // over obscure ones — e.g. "break" shouldn't resolve to the "break in an animal" (tame) subsense.
+    const topLevelSenses = Array.isArray(entry.senses) ? entry.senses : [];
+    const nestedSenses = [];
+    const collectSubsenses = items => {
+      for (const item of Array.isArray(items) ? items : []) {
+        nestedSenses.push(item);
+        collectSubsenses(item.subsenses);
+      }
+    };
+    topLevelSenses.forEach(sense => collectSubsenses(sense.subsenses));
+
+    for (const sense of [...topLevelSenses, ...nestedSenses]) {
+      const match = findMatch(sense);
+      if (!match) continue;
+      const rawWord = match.word.trim();
+      const word = targetLang === 'he' ? stripNiqqud(rawWord).normalize('NFKC').trim() : rawWord;
+      const partOfSpeech = String(entry.partOfSpeech || '').toLowerCase();
+      const sourceUrl = typeof data.source?.url === 'string' && /^https?:\/\//i.test(data.source.url) ? data.source.url : '';
+      return {
+        word,
+        english: englishTerm,
+        definition: sense.definition?.trim() || '',
+        partOfSpeech,
+        pronunciation: '',
+        audio: '',
+        sourceUrl,
+        transliteration: targetLang === 'he' ? hebrewToTranslit(word) : '',
+        type: validTypes.includes(partOfSpeech) ? partOfSpeech : partOfSpeech === 'name' ? 'noun' : '',
+        topics: [],
+      };
+    }
+  }
+  return null;
+}
+
+function mapDictionaryEntry(word, data, language, preferredPartOfSpeech) {
+  const allEntries = Array.isArray(data?.entries) ? data.entries : [];
+  const posEntries = preferredPartOfSpeech ? allEntries.filter(item => item.partOfSpeech === preferredPartOfSpeech) : [];
+  const entries = posEntries.length ? posEntries : allEntries;
+  const entry = entries.find(item => Array.isArray(item.senses) && item.senses.some(sense => sense.definition || sense.translations?.length)) || entries[0];
+  if (!entry) return null;
+  const senses = [];
+  const collectSenses = items => {
+    for (const item of Array.isArray(items) ? items : []) {
+      senses.push(item);
+      collectSenses(item.subsenses);
+    }
+  };
+  entries.forEach(item => collectSenses(item.senses));
+  const translations = senses.flatMap(item => Array.isArray(item.translations) ? item.translations : []);
+  const english = translations.find(item => item.language?.code === 'en' && item.word)?.word?.trim();
+  const sense = senses.find(item => item.definition) || {};
+  const definition = sense.definition?.trim();
+  if (!english && !definition) return null;
+  const pronunciation = (entry.pronunciations || []).find(item => item.text || item.audio) || {};
+  const audioCandidate = typeof pronunciation.audio === 'string' ? pronunciation.audio : pronunciation.url;
+  const audio = typeof audioCandidate === 'string' && /^https?:\/\//i.test(audioCandidate) ? audioCandidate : '';
+  const meaning = english || definition;
+  const topic = inferSuggestionTopic(meaning);
+  const partOfSpeech = String(entry.partOfSpeech || '').toLowerCase();
+  const validTypes = ['noun', 'verb', 'adjective', 'adverb', 'preposition', 'pronoun', 'conjunction', 'interjection', 'phrase'];
+  const type = validTypes.includes(partOfSpeech) ? partOfSpeech : partOfSpeech === 'name' ? 'noun' : '';
+  const romanization = (entry.forms || []).find(form => form.tags?.includes('romanization'))?.word;
+  const sourceUrl = typeof data.source?.url === 'string' && /^https?:\/\//i.test(data.source.url) ? data.source.url : '';
+  return {
+    word,
+    english: meaning,
+    definition: definition || '',
+    partOfSpeech,
+    pronunciation: pronunciation.text || '',
+    audio,
+    sourceUrl,
+    transliteration: language === 'he' ? (romanization || hebrewToTranslit(word)) : '',
+    type,
+    topics: topic ? [topic] : [],
+  };
+}
+
+async function loadRemoteSuggestions(language) {
+  const cached = remoteSuggestionCache[language];
+  if (cached && Date.now() - cached.loadedAt < REMOTE_SUGGESTION_CACHE_MS) return cached.suggestions;
+  if (remoteSuggestionRequests[language]) return remoteSuggestionRequests[language];
+
+  const config = REMOTE_SUGGESTION_CONFIG[language];
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 4000);
+  remoteSuggestionRequests[language] = (async () => {
+    try {
+      const listResponse = await fetchWithTimeout(config.wordListUrl, controller.signal);
+      const words = parseRemoteWordList(await listResponse.text(), language);
+      const dictionarySuggestions = await Promise.all(words.map(async word => {
+        try {
+          const endpoint = `https://freedictionaryapi.com/api/v1/entries/${config.dictionaryLanguage}/${encodeURIComponent(word)}?translations=true`;
+          const response = await fetchWithTimeout(endpoint, controller.signal);
+          return mapDictionaryEntry(word, await response.json(), language);
+        } catch (error) {
+          return null;
+        }
+      }));
+      const suggestions = dictionarySuggestions.filter(Boolean).slice(0, REMOTE_SUGGESTION_LIMIT);
+      remoteSuggestionCache[language] = { loadedAt: Date.now(), suggestions };
+      return suggestions;
+    } catch (error) {
+      remoteSuggestionCache[language] = { loadedAt: Date.now(), suggestions: [] };
+      return [];
+    } finally {
+      clearTimeout(timeoutId);
+      remoteSuggestionRequests[language] = null;
+    }
+  })();
+  return remoteSuggestionRequests[language];
+}
+
+function wordNative(w) { return w.word || w.hebrew || ''; }
+
+function getAvailableSuggestions(preferences = {}) {
+  const suggestions = suggestionPool();
+  const existingSet = new Set(vocabData.words.map(w => wordNative(w)));
+  const declinedSet = new Set(vocabData.declined || []);
+  return suggestions
+    .filter(s => !existingSet.has(s.word) && !declinedSet.has(s.word))
+    .map((suggestion, index) => {
+      let score = 0;
+      if (preferences.type && suggestion.type === preferences.type) score += 20;
+      if (preferences.topic && suggestion.topics?.includes(preferences.topic)) score += 12;
+      return { suggestion, score, index };
+    })
+    .sort((a, b) => b.score - a.score || a.index - b.index)
+    .map(({ suggestion }) => suggestion);
+}
+
+function inferSuggestionTopic(english) {
+  const meaning = english.toLowerCase();
+  const topicWords = {
+    movement: ['go', 'walk', 'run', 'fast', 'slow', 'move'],
+    communication: ['say', 'speak', 'talk', 'write', 'read', 'listen', 'hear'],
+    food: ['eat', 'drink', 'food', 'bread', 'water', 'cook'],
+    'daily life': ['sleep', 'wake', 'work', 'home', 'day', 'night'],
+    time: ['time', 'day', 'night', 'year', 'now', 'always'],
+    description: ['new', 'big', 'small', 'good', 'beautiful', 'color', 'fast'],
+  };
+  return Object.entries(topicWords).find(([, words]) => words.some(word => meaning.includes(word)))?.[0] || '';
+}
+
+// ═══════════════════════════════════════════════════════════════
+// VOCABULARY SCREEN — RENDER & ACTIONS
+// ═══════════════════════════════════════════════════════════════
+let vocabNewFormOpen = false;
+let vocabEditId = null;
+let vocabFolder = null;
+let vocabNewPreviewEntry = null;
+let vocabNewFieldsManual = { english: false, type: false, word: false, translit: false };
+let vocabLookupDebounceId = null;
+let vocabLookupToken = 0;
+let vocabEnglishLookupDebounceId = null;
+let vocabEnglishLookupToken = 0;
+
+const VOCAB_TYPES = [
+  { id: 'noun', label: 'Nouns', icon: '📦' },
+  { id: 'verb', label: 'Verbs', icon: '🏃' },
+  { id: 'adjective', label: 'Adjectives', icon: '🎨' },
+  { id: 'adverb', label: 'Adverbs', icon: '⚡' },
+  { id: 'preposition', label: 'Prepositions', icon: '📍' },
+  { id: 'pronoun', label: 'Pronouns', icon: '👤' },
+  { id: 'conjunction', label: 'Conjunctions', icon: '🔗' },
+  { id: 'interjection', label: 'Interjections', icon: '❗' },
+  { id: 'phrase', label: 'Phrases', icon: '💬' },
+];
+
+function vocabTypeInfo(type) {
+  return VOCAB_TYPES.find(item => item.id === type) || VOCAB_TYPES[0];
+}
+
+function openVocab() {
+  vocabNewFormOpen = false;
+  vocabEditId = null;
+  vocabFolder = null;
+  vocabLastAdded = null;
+  vocabData = loadVocab();
+  showScreen('vocabScreen');
+  const langLabel = state.currentLang === 'pt' ? 'Portuguese' : 'Hebrew';
+  document.getElementById('vocabScreenTitle').textContent = `📚 ${langLabel} Vocabulary`;
+  renderVocab();
+  const requestedLanguage = state.currentLang;
+  loadRemoteSuggestions(requestedLanguage).then(() => {
+    if (state.currentLang === requestedLanguage && document.getElementById('vocabScreen')?.classList.contains('active')) renderVocab();
+  });
+}
+
+function openVocabAndPlay() {
+  vocabData = loadVocab();
+  if (vocabData.words.length === 0) {
+    openVocab();
+  } else {
+    startFlashcards();
+  }
+}
+
+function renderVocab() {
+  const content = document.getElementById('vocabContent');
+  content.innerHTML = '';
+
+  // Practice button state
+  const playBtn = document.getElementById('btnPlayFlash');
+  playBtn.disabled = vocabData.words.length === 0;
+
+  // Vocab count progress bar (up to 30 words = "full")
+  const pct = Math.min(100, Math.round((vocabData.words.length / 30) * 100));
+  document.getElementById('vocabProgressBar').style.width = pct + '%';
+
+  // ── Add word button or form ──
+  if (vocabNewFormOpen) {
+    content.appendChild(buildNewWordForm());
+  } else {
+    const addBtn = document.createElement('button');
+    addBtn.className = 'vocab-add-btn';
+    addBtn.textContent = '+ Add a word';
+    addBtn.onclick = () => { vocabNewFormOpen = true; renderVocab(); setTimeout(() => document.getElementById('nwWord')?.focus(), 50); };
+    content.appendChild(addBtn);
+  }
+
+  // ── Type folders or the selected word list ──
+  if (vocabData.words.length > 0 && !vocabFolder) {
+    const lbl = document.createElement('div');
+    lbl.className = 'vocab-section-title';
+    lbl.textContent = 'Word types';
+    content.appendChild(lbl);
+
+    const folders = document.createElement('div');
+    folders.className = 'vocab-folder-grid';
+    VOCAB_TYPES.forEach(type => {
+      const count = vocabData.words.filter(word => (word.type || 'noun') === type.id).length;
+      const folder = document.createElement('button');
+      folder.className = 'vocab-folder';
+      folder.innerHTML = `<span class="vocab-folder-icon">${type.icon}</span><span class="vocab-folder-info"><span class="vocab-folder-name">${type.label}</span><span class="vocab-folder-count">${count} ${count === 1 ? 'word' : 'words'}</span></span>`;
+      folder.onclick = () => { vocabFolder = type.id; vocabEditId = null; renderVocab(); };
+      folders.appendChild(folder);
+    });
+    content.appendChild(folders);
+  } else if (vocabFolder) {
+    const type = vocabTypeInfo(vocabFolder);
+    const header = document.createElement('div');
+    header.className = 'vocab-list-header';
+    header.innerHTML = `<button class="vocab-back-btn" onclick="closeVocabFolder()">← Types</button><div class="vocab-list-title">${type.icon} ${type.label}</div>`;
+    content.appendChild(header);
+
+    const words = vocabData.words.filter(word => (word.type || 'noun') === vocabFolder);
+    if (words.length === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'vocab-empty';
+      empty.innerHTML = '🌟<br>No words in this folder yet';
+      content.appendChild(empty);
+    } else {
+      words.forEach(word => {
+        content.appendChild(vocabEditId === word.id ? buildEditWordForm(word) : buildWordCard(word));
+      });
+    }
+  }
+
+  // ── Suggestions ──
+  const suggestions = getAvailableSuggestions(vocabLastAdded || {}).slice(0, 5);
+  if (suggestions.length > 0) {
+    const lbl = document.createElement('div');
+    lbl.className = 'vocab-section-title';
+    lbl.textContent = vocabLastAdded ? `More ${vocabLastAdded.type}s & related words` : 'Suggested Words';
+    content.appendChild(lbl);
+    suggestions.forEach(s => content.appendChild(buildSuggestedCard(s)));
+  }
+
+  // ── Empty state ──
+  if (vocabData.words.length === 0 && suggestions.length === 0) {
+    const empty = document.createElement('div');
+    empty.className = 'vocab-empty';
+    empty.innerHTML = '🌟<br>No words yet!<br><span style="font-size:13px">Add words or accept suggestions above</span>';
+    content.appendChild(empty);
+  }
+}
+
+function closeVocabFolder() {
+  vocabFolder = null;
+  vocabEditId = null;
+  renderVocab();
+}
+
+function buildWordCard(word) {
+  const card = document.createElement('div');
+  card.className = 'word-card';
+  const nativeClass = state.currentLang === 'he' ? 'word-hebrew' : 'word-native';
+  card.innerHTML = `
+    <div class="word-card-left">
+      <div class="${nativeClass}">${escH(wordNative(word))}</div>
+      <div class="word-english">${escH(word.english)}${word.transliteration ? ' · <em>' + escH(word.transliteration) + '</em>' : ''}</div>
+      ${word.definition || word.partOfSpeech || word.pronunciation ? `${word.definition ? `<div class="word-definition">${escH(word.definition)}</div>` : ''}<div class="word-meta">${word.partOfSpeech ? `<span>${escH(word.partOfSpeech)}</span>` : ''}${word.pronunciation ? `<span>${escH(word.pronunciation)}</span>` : ''}${word.audio ? `<a class="word-audio" href="${escH(word.audio)}" target="_blank" rel="noopener">Audio</a>` : ''}${word.sourceUrl ? `<a class="word-source" href="${escH(word.sourceUrl)}" target="_blank" rel="noopener">Source</a>` : ''}</div>` : ''}
+    </div>
+    <div class="word-card-right">
+      <button class="wc-btn wc-btn-edit"   onclick="startEditWord('${escA(word.id)}')">Edit</button>
+      <button class="wc-btn wc-btn-remove" onclick="removeVocabWord('${escA(word.id)}')">Remove</button>
+    </div>`;
+  return card;
+}
+
+function buildSuggestedCard(sug) {
+  const card = document.createElement('div');
+  card.className = 'word-card suggested';
+  const isRtl = state.currentLang === 'he';
+  const nativeClass = isRtl ? 'word-hebrew' : 'word-native';
+  card.innerHTML = `
+    <div class="word-card-left">
+      <span class="suggested-badge">✨ Suggested</span>
+      <div class="${nativeClass}">${escH(sug.word)}</div>
+      <div class="word-english">${escH(sug.english)}${sug.transliteration ? ' · <em>' + escH(sug.transliteration) + '</em>' : ''}</div>
+      ${sug.definition || sug.partOfSpeech || sug.pronunciation ? `${sug.definition ? `<div class="word-definition">${escH(sug.definition)}</div>` : ''}<div class="word-meta">${sug.partOfSpeech ? `<span>${escH(sug.partOfSpeech)}</span>` : ''}${sug.pronunciation ? `<span>${escH(sug.pronunciation)}</span>` : ''}${sug.audio ? `<a class="word-audio" href="${escH(sug.audio)}" target="_blank" rel="noopener">Audio</a>` : ''}${sug.sourceUrl ? `<a class="word-source" href="${escH(sug.sourceUrl)}" target="_blank" rel="noopener">Source</a>` : ''}</div>` : ''}
+    </div>
+    <div class="word-card-right">
+      <button class="wc-btn wc-btn-decline" onclick="declineSuggestion('${escA(sug.word)}')">Decline</button>
+      <button class="wc-btn wc-btn-accept"  onclick="acceptSuggestion('${escA(sug.word)}')">Accept</button>
+    </div>`;
+  return card;
+}
+
+function buildNewWordForm() {
+  const card = document.createElement('div');
+  card.className = 'word-card new-form';
+  const isHe = state.currentLang === 'he';
+  const wordPlaceholder = isHe ? 'Hebrew word… (or looked up from English)' : 'Portuguese word… (or looked up from English)';
+  const wordClass = isHe ? 'word-card-input hebrew-input' : 'word-card-input';
+  const dirAttr = isHe ? 'dir="rtl"' : '';
+  card.innerHTML = `
+    <div style="font-size:12px;font-weight:800;color:var(--text-s);text-transform:uppercase;letter-spacing:0.5px">New Word</div>
+    <div class="word-card-form-row">
+      <input id="nwWord"    class="${wordClass}" type="text" placeholder="${wordPlaceholder}" ${dirAttr} autocomplete="off" autocorrect="off" spellcheck="false">
+      <input id="nwEnglish" class="word-card-input" type="text" placeholder="English meaning (auto-fills the word)…" autocomplete="off" autocorrect="off" spellcheck="false">
+      <input id="nwTranslit" class="word-card-input" type="text" placeholder="${isHe ? 'Romanized Hebrew' : 'Transliteration (optional)'}" autocomplete="off" autocorrect="off" spellcheck="false">
+      <select id="nwType" class="word-card-input" aria-label="Word type">
+        <option value="" selected disabled>Select word type…</option>
+        <option value="noun">Noun</option>
+        <option value="verb">Verb</option>
+        <option value="adjective">Adjective</option>
+        <option value="adverb">Adverb</option>
+        <option value="preposition">Preposition</option>
+        <option value="pronoun">Pronoun</option>
+        <option value="conjunction">Conjunction</option>
+        <option value="interjection">Interjection</option>
+        <option value="phrase">Phrase</option>
+      </select>
+    </div>
+    <div id="nwLookupStatus" role="status" aria-live="polite" style="font-size:12px;font-weight:700;color:var(--text-s)"></div>
+    <div class="word-card-form-actions">
+      <button class="wc-btn wc-btn-cancel" onclick="cancelNewWord()">Cancel</button>
+      <button class="wc-btn wc-btn-insert" onclick="insertNewWord()">Save</button>
+    </div>`;
+  vocabNewFieldsManual = { english: false, type: false, word: false, translit: false };
+  const wordInput = card.querySelector('#nwWord');
+  const translitInput = card.querySelector('#nwTranslit');
+  const englishInput = card.querySelector('#nwEnglish');
+  const typeInput = card.querySelector('#nwType');
+  wordInput.addEventListener('input', () => { vocabNewFieldsManual.word = true; });
+  translitInput.addEventListener('input', () => { vocabNewFieldsManual.translit = true; });
+  englishInput.addEventListener('input', () => { vocabNewFieldsManual.english = true; });
+  typeInput.addEventListener('change', () => { vocabNewFieldsManual.type = true; });
+  wireEnglishAutoLookup(englishInput);
+  if (isHe) {
+    wireTransliterationSync(wordInput, translitInput);
+    wireAutoLookup(wordInput, translitInput);
+  }
+  return card;
+}
+
+// Debounce lookup so it fires once the user pauses typing the English meaning.
+function wireEnglishAutoLookup(englishInput) {
+  englishInput.addEventListener('input', (event) => {
+    clearTimeout(vocabEnglishLookupDebounceId);
+    const status = document.getElementById('nwLookupStatus');
+    if (!englishInput.value.trim()) { if (status) status.textContent = ''; return; }
+    if (status) status.textContent = 'Waiting for you to finish typing…';
+    vocabEnglishLookupDebounceId = setTimeout(() => previewWordFromEnglish(event.target), 700);
+  });
+}
+
+// Debounce lookup so it fires once the user pauses typing the Hebrew/romanized word.
+function wireAutoLookup(wordInput, translitInput) {
+  const trigger = (event) => {
+    clearTimeout(vocabLookupDebounceId);
+    const sourceField = event.target;
+    const status = document.getElementById('nwLookupStatus');
+    if (!sourceField.value.trim()) {
+      if (status) status.textContent = '';
+      clearAutoFilledLookupFields();
+      return;
+    }
+    if (status) status.textContent = 'Waiting for you to finish typing…';
+    vocabLookupDebounceId = setTimeout(() => previewNewWord(sourceField), 700);
+  };
+  wordInput.addEventListener('input', trigger);
+  translitInput.addEventListener('input', trigger);
+}
+
+// Wipes the English meaning & word type auto-filled from the dictionary lookup (the word<->translit
+// sync already clears the other of those two fields) and un-marks them as "manual" so a fresh
+// lookup can auto-fill them again next time a word is typed, even if the user had hand-edited them.
+function clearAutoFilledLookupFields() {
+  const englishInput = document.getElementById('nwEnglish');
+  const typeInput = document.getElementById('nwType');
+  if (englishInput) englishInput.value = '';
+  if (typeInput) typeInput.value = '';
+  vocabNewFieldsManual.english = false;
+  vocabNewFieldsManual.type = false;
+  vocabNewPreviewEntry = null;
+}
+
+function buildEditWordForm(word) {
+  const card = document.createElement('div');
+  card.className = 'word-card new-form';
+  const nw = wordNative(word);
+  const isHe = state.currentLang === 'he';
+  const wordPlaceholder = isHe ? 'Hebrew word…' : 'Portuguese word…';
+  const wordClass = isHe ? 'word-card-input hebrew-input' : 'word-card-input';
+  const dirAttr = isHe ? 'dir="rtl"' : '';
+  card.innerHTML = `
+    <div style="font-size:12px;font-weight:800;color:var(--text-s);text-transform:uppercase;letter-spacing:0.5px">Edit Word</div>
+    <div class="word-card-form-row">
+      <input id="ewWord"    class="${wordClass}" type="text" value="${escH(nw)}" placeholder="${wordPlaceholder}" ${dirAttr} autocomplete="off" autocorrect="off" spellcheck="false">
+      <input id="ewEnglish" class="word-card-input" type="text" value="${escH(word.english)}" placeholder="English meaning…" autocomplete="off" autocorrect="off" spellcheck="false">
+      <input id="ewTranslit" class="word-card-input" type="text" value="${escH(word.transliteration||'')}" placeholder="Transliteration (optional)" autocomplete="off" autocorrect="off" spellcheck="false">
+      <select id="ewType" class="word-card-input" aria-label="Word type">
+        ${VOCAB_TYPES.map(type => `<option value="${type.id}"${(word.type || 'noun') === type.id ? ' selected' : ''}>${type.label.slice(0, -1)}</option>`).join('')}
+      </select>
+    </div>
+    <div class="word-card-form-actions">
+      <button class="wc-btn wc-btn-cancel" onclick="cancelEditWord()">Cancel</button>
+      <button class="wc-btn wc-btn-insert" onclick="saveEditWord('${escA(word.id)}')">Save</button>
+    </div>`;
+  return card;
+}
+
+// Auto-fills English meaning & word type from the external dictionary API once the Hebrew/romanized word settles.
+// `sourceField` is whichever input the user just typed in — its raw value is used to guess spellings,
+// since the other field may already hold a stale auto-mirrored conversion by the time this runs.
+async function previewNewWord(sourceField) {
+  clearTimeout(vocabLookupDebounceId);
+  const wordField = document.getElementById('nwWord');
+  const translitField = document.getElementById('nwTranslit');
+  const status = document.getElementById('nwLookupStatus');
+  if (!wordField || !translitField) return;
+  const rawField = (sourceField === wordField || sourceField === translitField) ? sourceField : wordField;
+  const rawInput = rawField.value.trim();
+  vocabNewPreviewEntry = null;
+  if (!rawInput) {
+    if (status) status.textContent = '';
+    return;
+  }
+
+  const hasHebrewScript = /[\u0590-\u05FF]/.test(rawInput);
+  const candidates = hasHebrewScript
+    ? [stripNiqqud(rawInput).normalize('NFKC').trim()]
+    : hebrewSpellingCandidates(rawInput);
+  wordField.value = candidates[0];
+  translitField.value = rawField === translitField ? rawInput : (hasHebrewScript ? translitField.value.trim() : rawInput);
+  if (status) status.textContent = 'Looking up word…';
+  const token = ++vocabLookupToken;
+  let entry = null;
+  let matchedWord = candidates[0];
+
+  for (const candidate of candidates) {
+    try {
+      entry = await lookupHebrewWord(candidate);
+    } catch (error) { entry = null; }
+    if (token !== vocabLookupToken || document.getElementById('nwWord') !== wordField) return;
+    if (entry) { matchedWord = candidate; break; }
+  }
+
+  if (!entry) {
+    if (status) status.textContent = 'No dictionary entry found. Fill in the fields manually, then save.';
+    return;
+  }
+
+  wordField.value = matchedWord;
+  const englishInput = document.getElementById('nwEnglish');
+  const typeInput = document.getElementById('nwType');
+  if (entry.english && !vocabNewFieldsManual.english && englishInput) englishInput.value = entry.english;
+  if (entry.transliteration) translitField.value = formatTranslitWithStress(entry.transliteration);
+  if (VOCAB_TYPES.some(item => item.id === entry.type) && !vocabNewFieldsManual.type && typeInput) typeInput.value = entry.type;
+  vocabNewPreviewEntry = entry;
+  status.textContent = entry.english
+    ? 'Auto-filled from the dictionary. Review the fields, then save.'
+    : 'Word found, but no English meaning was returned. Enter the meaning manually.';
+}
+
+// Auto-fills the target-language word (plus Hebrew transliteration/word type) once the English meaning settles.
+async function previewWordFromEnglish(englishField) {
+  clearTimeout(vocabEnglishLookupDebounceId);
+  const wordField = document.getElementById('nwWord');
+  const translitField = document.getElementById('nwTranslit');
+  const typeField = document.getElementById('nwType');
+  const status = document.getElementById('nwLookupStatus');
+  if (!wordField || document.getElementById('nwEnglish') !== englishField) return;
+  const englishTerm = englishField.value.trim();
+  if (!englishTerm) { if (status) status.textContent = ''; return; }
+  if (vocabNewFieldsManual.word && wordField.value.trim()) { if (status) status.textContent = ''; return; }
+
+  const isHe = state.currentLang === 'he';
+  const targetLang = isHe ? 'he' : 'pt';
+  if (status) status.textContent = 'Looking up translation…';
+  const token = ++vocabEnglishLookupToken;
+  let entry = null;
+  try {
+    entry = await lookupEnglishTranslation(englishTerm, targetLang);
+  } catch (error) { entry = null; }
+  if (token !== vocabEnglishLookupToken || document.getElementById('nwEnglish') !== englishField) return;
+
+  if (!entry) {
+    if (status) status.textContent = 'No translation found. Fill in the word manually, then save.';
+    return;
+  }
+
+  if (!vocabNewFieldsManual.word) {
+    wordField.value = entry.word;
+    if (isHe && translitField && !vocabNewFieldsManual.translit) translitField.value = formatTranslitWithStress(entry.transliteration);
+  }
+  if (VOCAB_TYPES.some(item => item.id === entry.type) && !vocabNewFieldsManual.type && typeField) typeField.value = entry.type;
+  vocabNewPreviewEntry = entry;
+  status.textContent = 'Auto-filled from the dictionary. Review the fields, then save.';
+}
+
+function insertNewWord() {
+  const enteredWord = document.getElementById('nwWord')?.value.trim();
+  const eng = document.getElementById('nwEnglish')?.value.trim();
+  const enteredTranslit = document.getElementById('nwTranslit')?.value.trim();
+  const type = document.getElementById('nwType')?.value;
+  const isHe = state.currentLang === 'he';
+  const missing = [];
+  if (!enteredWord) missing.push('word');
+  if (!eng) missing.push('English meaning');
+  if (isHe && !enteredTranslit) missing.push('Romanized Hebrew');
+  if (!type) missing.push('word type');
+  if (missing.length > 0) {
+    alert(`Please fill in: ${missing.join(', ')}.`);
+    return;
+  }
+
+  const { word: nativeWord } = normalizeHebrewVocabEntry(enteredWord, enteredTranslit);
+  const previewEntry = vocabNewPreviewEntry && stripNiqqud(vocabNewPreviewEntry.word || '').normalize('NFKC') === stripNiqqud(nativeWord).normalize('NFKC')
+    ? vocabNewPreviewEntry
+    : null;
+  vocabData.words.unshift({
+    id: Date.now().toString(),
+    word: nativeWord,
+    english: eng,
+    transliteration: enteredTranslit,
+    type,
+    definition: previewEntry?.definition || '',
+    partOfSpeech: previewEntry?.partOfSpeech || '',
+    pronunciation: previewEntry?.pronunciation || '',
+    audio: previewEntry?.audio || '',
+    sourceUrl: previewEntry?.sourceUrl || '',
+  });
+  vocabLastAdded = { type, topic: inferSuggestionTopic(eng) };
+  vocabNewPreviewEntry = null;
+  saveVocab();
+  vocabNewFormOpen = false;
+  renderVocab();
+}
+
+function cancelNewWord() { clearTimeout(vocabLookupDebounceId); vocabNewFormOpen = false; vocabNewPreviewEntry = null; renderVocab(); }
+
+function startEditWord(id) { vocabEditId = id; vocabNewFormOpen = false; renderVocab(); setTimeout(() => document.getElementById('ewWord')?.focus(), 50); }
+function cancelEditWord() { vocabEditId = null; renderVocab(); }
+
+function saveEditWord(id) {
+  const enteredWord = document.getElementById('ewWord')?.value.trim();
+  const eng = document.getElementById('ewEnglish')?.value.trim();
+  const enteredTranslit = document.getElementById('ewTranslit')?.value.trim();
+  const type = document.getElementById('ewType')?.value || 'noun';
+  if (!enteredWord || !eng) { alert('Please fill in the word and its English meaning.'); return; }
+  const { word: nw, transliteration: trl } = normalizeHebrewVocabEntry(enteredWord, enteredTranslit);
+  const w = vocabData.words.find(x => x.id === id);
+  if (w) { w.word = nw; w.english = eng; w.transliteration = trl; w.type = type; }
+  saveVocab();
+  vocabEditId = null;
+  renderVocab();
+}
+
+function removeVocabWord(id) {
+  vocabData.words = vocabData.words.filter(w => w.id !== id);
+  saveVocab();
+  renderVocab();
+}
+
+function acceptSuggestion(word) {
+  const sug = suggestionPool().find(s => s.word === word);
+  if (!sug) return;
+  vocabData.words.push({ id: Date.now().toString() + Math.random().toString(36).slice(2), word: sug.word, english: sug.english, transliteration: sug.transliteration || '', type: sug.type || 'noun', definition: sug.definition || '', partOfSpeech: sug.partOfSpeech || '', pronunciation: sug.pronunciation || '', audio: sug.audio || '', sourceUrl: sug.sourceUrl || '' });
+  saveVocab();
+  renderVocab();
+}
+
+function declineSuggestion(word) {
+  if (!vocabData.declined) vocabData.declined = [];
+  if (!vocabData.declined.includes(word)) vocabData.declined.push(word);
+  saveVocab();
+  renderVocab();
+}
+
+// HTML-safe helpers
+function escH(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function escA(s) { return String(s).replace(/'/g,'&#39;'); }
+
+function normalizeHebrewVocabEntry(word, transliteration) {
+  if (state.currentLang !== 'he' || /[\u0590-\u05FF]/.test(word)) {
+    return { word, transliteration: transliteration || '' };
+  }
+  return { word: translitToHebrew(word), transliteration: transliteration || word };
+}
+
+// Best-effort Latin transliteration <-> Hebrew script conversion (approximate, user can always edit).
+const HE_FINAL_FORMS = { 'מ':'ם', 'נ':'ן', 'כ':'ך', 'פ':'ף', 'צ':'ץ' };
+const HE_TO_LATIN_MAP = { 'א':'','ב':'b','ג':'g','ד':'d','ה':'h','ו':'v','ז':'z','ח':'ch','ט':'t','י':'y','כ':'kh','ך':'kh','ל':'l','מ':'m','ם':'m','נ':'n','ן':'n','ס':'s','ע':'','פ':'p','ף':'p','צ':'tz','ץ':'tz','ק':'k','ר':'r','ש':'sh','ת':'t' };
+const LATIN_TO_HE_MULTI = [ ['yi','י'], ['iy','י'], ['sh','ש'], ['ch','ח'], ['kh','כ'], ['tz','צ'], ['ts','צ'], ['ph','פ'] ];
+const LATIN_TO_HE_SINGLE = { 'a':'', 'e':'', 'i':'י', 'o':'ו', 'u':'ו', 'y':'י', 'v':'ו', 'w':'ו', 'b':'ב', 'g':'ג', 'd':'ד', 'h':'ה', 'z':'ז', 't':'ת', 'k':'כ', 'l':'ל', 'm':'מ', 'n':'נ', 's':'ס', 'p':'פ', 'f':'פ', 'q':'ק', 'r':'ר', 'c':'כ', 'j':'ג' };
+
+function stripNiqqud(s) { return String(s).replace(/[\u0591-\u05C7]/g, ''); }
+
+// Strips accent/stress marks (e.g. ó -> o) to derive the easy-to-type simplified romanization.
+function stripStressMarks(s) { return String(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').normalize('NFC'); }
+
+// Keeps the plain, easy-to-type romanization as the primary spelling and appends the accented
+// pronunciation guide in parentheses when it carries stress info, e.g. "lishbor (lishbór)".
+function formatTranslitWithStress(accented) {
+  if (!accented) return accented;
+  const plain = stripStressMarks(accented);
+  return plain === accented ? accented : `${plain} (${accented})`;
+}
+
+function hebrewToTranslit(s) {
+  const clean = stripNiqqud(s);
+  let out = '';
+  for (const ch of clean) out += HE_TO_LATIN_MAP[ch] ?? (/\s/.test(ch) ? ch : '');
+  return out;
+}
+
+function translitToHebrew(s, consonantOverrides) {
+  const singleMap = consonantOverrides ? { ...LATIN_TO_HE_SINGLE, ...consonantOverrides } : LATIN_TO_HE_SINGLE;
+  const lower = String(s).toLowerCase();
+  let out = '';
+  let i = 0;
+  while (i < lower.length) {
+    if (/\s/.test(lower[i])) { out += lower[i]; i++; continue; }
+    if ((i === 0 || /\s/.test(lower[i - 1])) && (lower[i] === 'a' || lower[i] === 'e')) {
+      out += 'א';
+      i++;
+      continue;
+    }
+    const match = LATIN_TO_HE_MULTI.find(([latin]) => lower.startsWith(latin, i));
+    if (match) { out += match[1]; i += match[0].length; continue; }
+    // a trailing unstressed a/e at the end of a word is almost always spelled with a final ה (e.g. toda -> תודה)
+    if ((i === lower.length - 1 || /\s/.test(lower[i + 1])) && (lower[i] === 'a' || lower[i] === 'e')) {
+      out += 'ה';
+      i++;
+      continue;
+    }
+    out += singleMap[lower[i]] ?? '';
+    i++;
+  }
+  // apply final letter forms at the end of each word
+  return out.split(' ').map(word => {
+    if (!word) return word;
+    const last = word.slice(-1);
+    return HE_FINAL_FORMS[last] ? word.slice(0, -1) + HE_FINAL_FORMS[last] : word;
+  }).join(' ');
+}
+
+// Latin letters like v/t/k map to more than one Hebrew letter (ב/ו, ת/ט, כ/ק) — try the common alternates
+// when the primary guess has no dictionary entry, instead of giving up after a single lookup.
+function hebrewSpellingCandidates(word) {
+  const variants = [
+    translitToHebrew(word),
+    translitToHebrew(word, { v: 'ב' }),
+    translitToHebrew(word, { v: 'ב', t: 'ט', k: 'ק' }),
+  ];
+  return [...new Set(variants.filter(Boolean))];
+}
+
+function wireTransliterationSync(wordInput, translitInput) {
+  let wordManual = false, translitManual = false;
+  wordInput.addEventListener('input', () => {
+    wordManual = true;
+    if (!translitManual) translitInput.value = hebrewToTranslit(wordInput.value);
+  });
+  translitInput.addEventListener('input', () => {
+    translitManual = true;
+    if (!wordManual) wordInput.value = translitToHebrew(translitInput.value);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// FLASHCARD GAME
+// ═══════════════════════════════════════════════════════════════
+let flashState = { cards: [], idx: 0, correct: 0, passed: 0, wrong: 0, revealed: false };
+
+function startFlashcards() {
+  vocabData = loadVocab();
+  if (vocabData.words.length === 0) { openVocab(); return; }
+  flashState = {
+    cards: [...vocabData.words].sort(() => Math.random() - 0.5),
+    idx: 0, correct: 0, passed: 0, wrong: 0, revealed: false,
+  };
+  const langLabel = state.currentLang === 'pt' ? '🇵🇹 Portuguese' : '🇮🇱 Hebrew';
+  document.querySelector('.flash-title').textContent = `🃏 ${langLabel} Flashcards`;
+  showScreen('flashcardScreen');
+  renderFlashcard();
+}
+
+function exitFlashcards() {
+  openVocab();
+}
+
+function renderFlashcard() {
+  const area = document.getElementById('flashCardArea');
+  area.innerHTML = '';
+  const total = flashState.cards.length;
+  const idx   = flashState.idx;
+
+  if (idx >= total) { renderFlashSummary(area); return; }
+
+  document.getElementById('flashProgressText').textContent = `${idx + 1} / ${total}`;
+  document.getElementById('flashProgressFill').style.width = `${(idx / total) * 100}%`;
+
+  const card = flashState.cards[idx];
+  flashState.revealed = false;
+
+  const wrap = document.createElement('div');
+  wrap.style.cssText = 'width:100%;max-width:360px;display:flex;flex-direction:column;gap:20px;';
+  const nativeWord = wordNative(card);
+  const langLabel = state.currentLang === 'pt' ? 'Portuguese' : 'Hebrew';
+  const wordStyle = state.currentLang === 'pt' ? 'style="font-size:34px"' : '';
+  wrap.innerHTML = `
+    <div class="flashcard">
+      <div class="flashcard-inner" id="fcInner">
+        <div class="flashcard-face">
+          <div class="flashcard-hebrew" ${wordStyle}>${escH(nativeWord)}</div>
+          ${card.transliteration ? `<div class="flashcard-hint">${escH(card.transliteration)}</div>` : ''}
+          <div class="flashcard-hint" style="margin-top:12px">What does this mean in English?</div>
+        </div>
+        <div class="flashcard-face back">
+          <div class="flashcard-answer">${escH(card.english)}</div>
+          ${card.transliteration ? `<div class="flashcard-answer-sub">${escH(card.transliteration)}</div>` : ''}
+          <div class="flashcard-answer-sub" style="margin-top:8px">${escH(langLabel)}: ${escH(nativeWord)}</div>
+        </div>
+      </div>
+    </div>
+    <div class="flash-input-area">
+      <input id="fcInput" class="flash-text-input" type="text" placeholder="Type English meaning…" autocomplete="off" autocorrect="off" spellcheck="false">
+      <div class="flash-result-row" id="fcResultRow">
+        <div class="flash-result-badge" id="fcResultBadge"></div>
+      </div>
+      <div class="flash-btn-row" id="fcBtnRow">
+        <button class="flash-btn flash-btn-pass" onclick="flashPass()">Pass</button>
+        <button class="flash-btn flash-btn-submit inactive" id="fcSubmitBtn" onclick="flashSubmit()">Check</button>
+      </div>
+    </div>`;
+  area.appendChild(wrap);
+
+  const input = document.getElementById('fcInput');
+  input.focus();
+  input.addEventListener('input', () => {
+    document.getElementById('fcSubmitBtn').classList.toggle('inactive', input.value.trim().length === 0);
+  });
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && input.value.trim().length > 0 && !flashState.revealed) flashSubmit();
+  });
+}
+
+function flashSubmit() {
+  if (flashState.revealed) return;
+  const input = document.getElementById('fcInput');
+  if (!input || !input.value.trim()) return;
+
+  const card = flashState.cards[flashState.idx];
+  const normalize = s => s.toLowerCase().replace(/[^a-z0-9 ]/g, '').trim();
+  const userVal   = normalize(input.value.trim());
+  const correct   = card.english.split('/').some(part => normalize(part.trim()) === userVal);
+
+  flashState.revealed = true;
+  input.disabled = true;
+  document.getElementById('fcInner').classList.add('flipped');
+
+  const resultRow  = document.getElementById('fcResultRow');
+  const badge      = document.getElementById('fcResultBadge');
+  resultRow.classList.add('show');
+
+  if (correct) {
+    flashState.correct++;
+    input.classList.add('correct-input');
+    badge.className   = 'flash-result-badge correct';
+    badge.textContent = '✓ Correct!';
+    spawnConfetti(12);
+  } else {
+    flashState.wrong++;
+    input.classList.add('wrong-input');
+    badge.className   = 'flash-result-badge wrong';
+    badge.textContent = `✗ Answer: ${card.english}`;
+  }
+  document.getElementById('fcBtnRow').innerHTML =
+    `<button class="flash-btn flash-btn-next" onclick="flashNext()" style="flex:1">Next →</button>`;
+}
+
+function flashPass() {
+  if (flashState.revealed) return;
+  flashState.passed++;
+  flashState.revealed = true;
+  const card  = flashState.cards[flashState.idx];
+  const input = document.getElementById('fcInput');
+  if (input) input.disabled = true;
+  document.getElementById('fcInner').classList.add('flipped');
+
+  const resultRow = document.getElementById('fcResultRow');
+  const badge     = document.getElementById('fcResultBadge');
+  resultRow.classList.add('show');
+  badge.className   = 'flash-result-badge passed';
+  badge.textContent = `Passed · Answer: ${card.english}`;
+  document.getElementById('fcBtnRow').innerHTML =
+    `<button class="flash-btn flash-btn-next" onclick="flashNext()" style="flex:1">Next →</button>`;
+}
+
+function flashNext() {
+  flashState.idx++;
+  renderFlashcard();
+}
+
+function renderFlashSummary(area) {
+  document.getElementById('flashProgressFill').style.width = '100%';
+  document.getElementById('flashProgressText').textContent = 'Done!';
+  const total = flashState.cards.length;
+  const pct   = Math.round((flashState.correct / Math.max(total, 1)) * 100);
+  const icon  = pct >= 80 ? '🏆' : pct >= 50 ? '⭐' : '💪';
+  const title = pct >= 80 ? 'Excellent!' : pct >= 50 ? 'Good job!' : 'Keep practising!';
+  area.innerHTML = `
+    <div class="flash-summary">
+      <div class="flash-summary-icon">${icon}</div>
+      <div class="flash-summary-title">${title}</div>
+      <div class="flash-summary-stats">
+        <div class="flash-stat"><div class="val">${flashState.correct}</div><div class="lbl">Correct</div></div>
+        <div class="flash-stat"><div class="val">${flashState.passed}</div><div class="lbl">Passed</div></div>
+        <div class="flash-stat"><div class="val">${flashState.wrong}</div><div class="lbl">Wrong</div></div>
+      </div>
+      <button class="btn-continue-home" onclick="exitFlashcards()">Back to Vocabulary</button>
+      <button class="modal-btn" onclick="startFlashcards()" style="background:var(--blue);box-shadow:0 3px 0 var(--blue-d);margin-top:4px">Practice Again</button>
+    </div>`;
+  spawnConfetti(24);
+}
+
+// ═══════════════════════════════════════════════════════════════
+// CONJUGATION DATA
+// ═══════════════════════════════════════════════════════════════
+const PT_CONJUGATIONS = {
+  present: {
+    title: 'Presente (Present Tense)',
+    subjects: ['Eu', 'Tu', 'Ele/Ela', 'Nós', 'Vós', 'Eles/Elas'],
+    verbs: [
+      { infinitive: 'ser',    translation: 'to be',      forms: ['sou',   'és',     'é',    'somos',    'sois',     'são']    },
+      { infinitive: 'ter',    translation: 'to have',    forms: ['tenho', 'tens',   'tem',  'temos',    'tendes',   'têm']    },
+      { infinitive: 'fazer',  translation: 'to do/make', forms: ['faço',  'fazes',  'faz',  'fazemos',  'fazeis',   'fazem']  },
+      { infinitive: 'ir',     translation: 'to go',      forms: ['vou',   'vais',   'vai',  'vamos',    'ides',     'vão']    },
+      { infinitive: 'falar',  translation: 'to speak',   forms: ['falo',  'falas',  'fala', 'falamos',  'falais',   'falam']  },
+      { infinitive: 'comer',  translation: 'to eat',     forms: ['como',  'comes',  'come', 'comemos',  'comeis',   'comem']  },
+      { infinitive: 'poder',  translation: 'can/be able',forms: ['posso', 'podes',  'pode', 'podemos',  'podeis',   'podem']  },
+      { infinitive: 'querer', translation: 'to want',    forms: ['quero', 'queres', 'quer', 'queremos', 'quereis',  'querem'] },
+    ]
+  },
+  past: {
+    title: 'Pretérito Perfeito (Simple Past)',
+    subjects: ['Eu', 'Tu', 'Ele/Ela', 'Nós', 'Vós', 'Eles/Elas'],
+    verbs: [
+      { infinitive: 'ser',    translation: 'to be',      forms: ['fui',   'foste',    'foi',   'fomos',    'fostes',    'foram']    },
+      { infinitive: 'ter',    translation: 'to have',    forms: ['tive',  'tiveste',  'teve',  'tivemos',  'tivestes',  'tiveram']  },
+      { infinitive: 'fazer',  translation: 'to do/make', forms: ['fiz',   'fizeste',  'fez',   'fizemos',  'fizestes',  'fizeram']  },
+      { infinitive: 'ir',     translation: 'to go',      forms: ['fui',   'foste',    'foi',   'fomos',    'fostes',    'foram']    },
+      { infinitive: 'falar',  translation: 'to speak',   forms: ['falei', 'falaste',  'falou', 'falámos',  'falastes',  'falaram']  },
+      { infinitive: 'comer',  translation: 'to eat',     forms: ['comi',  'comeste',  'comeu', 'comemos',  'comestes',  'comeram']  },
+      { infinitive: 'poder',  translation: 'can/be able',forms: ['pude',  'pudeste',  'pôde',  'pudemos',  'pudestes',  'puderam']  },
+      { infinitive: 'querer', translation: 'to want',    forms: ['quis',  'quiseste', 'quis',  'quisemos', 'quisestes', 'quiseram'] },
+    ]
+  }
+};
+
+const HE_CONJUGATIONS = {
+  present: {
+    title: 'הווה (Present Tense)',
+    subjects: ['Masc. Sg', 'Fem. Sg', 'Masc. Pl', 'Fem. Pl'],
+    verbs: [
+      { infinitive: 'לדבר',  translation: 'to speak', forms: ['מְדַבֵּר',  'מְדַבֶּרֶת',  'מְדַבְּרִים',  'מְדַבְּרוֹת'],  translit: ['medaber',  'medaberet', 'medabrim', 'medabrot'] },
+      { infinitive: 'לאכול', translation: 'to eat',   forms: ['אוֹכֵל',    'אוֹכֶלֶת',    'אוֹכְלִים',    'אוֹכְלוֹת'],    translit: ['ochel',    'ochelet',   'ochlim',   'ochlot']   },
+      { infinitive: 'ללכת',  translation: 'to go',    forms: ['הוֹלֵךְ',   'הוֹלֶכֶת',    'הוֹלְכִים',    'הוֹלְכוֹת'],    translit: ['holech',   'holechet',  'holchim',  'holchot']  },
+      { infinitive: 'לכתוב', translation: 'to write', forms: ['כּוֹתֵב',   'כּוֹתֶבֶת',   'כּוֹתְבִים',   'כּוֹתְבוֹת'],   translit: ['kotev',    'kotevet',   'kotvim',   'kotvot']   },
+      { infinitive: 'לשמוע', translation: 'to hear',  forms: ['שׁוֹמֵעַ',  'שׁוֹמַעַת',   'שׁוֹמְעִים',   'שׁוֹמְעוֹת'],   translit: ['shomea',   "shoma'at",  "shom'im",  "shom'ot"]  },
+      { infinitive: 'לראות', translation: 'to see',   forms: ['רוֹאֶה',    'רוֹאָה',       'רוֹאִים',      'רוֹאוֹת'],      translit: ["ro'eh",    "ro'ah",     "ro'im",    "ro'ot"]    },
+      { infinitive: 'לרצות', translation: 'to want',  forms: ['רוֹצֶה',    'רוֹצָה',       'רוֹצִים',      'רוֹצוֹת'],      translit: ['rotzeh',   'rotzah',    'rotzim',   'rotzot']   },
+      { infinitive: 'לדעת',  translation: 'to know',  forms: ['יוֹדֵעַ',   'יוֹדַעַת',    'יוֹדְעִים',    'יוֹדְעוֹת'],    translit: ['yodea',    "yoda'at",   "yod'im",   "yod'ot"]   },
+    ]
+  },
+  past: {
+    title: 'עבר (Past Tense)',
+    subjects: ['אני (I)', 'אתה (you m)', 'את (you f)', 'הוא (he)', 'היא (she)', 'אנחנו (we)', 'אתם (you pl m)', 'אתן (you pl f)', 'הם/הן (they)'],
+    verbs: [
+      { infinitive: 'לדבר',  translation: 'to speak', forms: ['דִּבַּרְתִּי', 'דִּבַּרְתָּ', 'דִּבַּרְתְּ', 'דִּבֵּר',    'דִּבְּרָה',  'דִּבַּרְנוּ', 'דִּבַּרְתֶּם', 'דִּבַּרְתֶּן', 'דִּבְּרוּ'],  translit: ['dibarti',  'dibarta',  'dibart',  'diber',  'dibra',  'dibarnu',  'dibartem',  'dibarten',  'dibru']  },
+      { infinitive: 'לאכול', translation: 'to eat',   forms: ['אָכַלְתִּי', 'אָכַלְתָּ', 'אָכַלְתְּ', 'אָכַל',     'אָכְלָה',   'אָכַלְנוּ',  'אֲכַלְתֶּם',  'אֲכַלְתֶּן',  'אָכְלוּ'],    translit: ['achalti',  'achalta',  'achalt',  'achal',  'achla',  'achalnu',  'achaltem',  'achalten',  'achlu']  },
+      { infinitive: 'ללכת',  translation: 'to go',    forms: ['הָלַכְתִּי', 'הָלַכְתָּ', 'הָלַכְתְּ', 'הָלַךְ',    'הָלְכָה',   'הָלַכְנוּ',  'הֲלַכְתֶּם',  'הֲלַכְתֶּן',  'הָלְכוּ'],    translit: ['halachti', 'halachta', 'halacht', 'halach', 'halcha', 'halachnu', 'halachtem', 'halachten', 'halchu'] },
+      { infinitive: 'לכתוב', translation: 'to write', forms: ['כָּתַבְתִּי', 'כָּתַבְתָּ', 'כָּתַבְתְּ', 'כָּתַב',   'כָּתְבָה',  'כָּתַבְנוּ', 'כְּתַבְתֶּם', 'כְּתַבְתֶּן', 'כָּתְבוּ'],   translit: ['katavti',  'katavta',  'katavt',  'katav',  'katva',  'katavnu',  'katavtem',  'katavten',  'katvu']  },
+    ]
+  }
+};
+
+// ═══════════════════════════════════════════════════════════════
+// TRANSLATE DATA
+// ═══════════════════════════════════════════════════════════════
+const PT_TRANSLATE_SENTENCES = [
+  { sentence: 'Bom dia!',                       en: 'Good morning!' },
+  { sentence: 'Como te chamas?',                en: 'What is your name?' },
+  { sentence: 'Eu quero água, por favor.',       en: 'I want water please' },
+  { sentence: 'Onde fica o aeroporto?',          en: 'Where is the airport?' },
+  { sentence: 'Quanto custa isso?',              en: 'How much does that cost?' },
+  { sentence: 'Estou com fome.',                 en: 'I am hungry' },
+  { sentence: 'A conta, por favor.',             en: 'The bill please' },
+  { sentence: 'Fala inglês?',                    en: 'Do you speak English?' },
+  { sentence: 'Preciso de ajuda.',               en: 'I need help' },
+  { sentence: 'Boa noite!',                      en: 'Good night!' },
+  { sentence: 'Muito obrigado!',                 en: 'Thank you very much!' },
+  { sentence: 'Até logo!',                       en: 'See you later!' },
+  { sentence: 'A maçã é vermelha.',              en: 'The apple is red' },
+  { sentence: 'Vou de comboio.',                 en: 'I am going by train' },
+  { sentence: 'Tenho um quarto reservado.',      en: 'I have a room reserved' },
+  { sentence: 'O cão é grande.',                 en: 'The dog is big' },
+  { sentence: 'Eu gosto de café.',               en: 'I like coffee' },
+  { sentence: 'Onde é a casa de banho?',         en: 'Where is the bathroom?' },
+];
+
+const HE_TRANSLATE_SENTENCES = [
+  { sentence: 'בוקר טוב!',                      en: 'Good morning!' },
+  { sentence: 'מה שמך?',                         en: 'What is your name?' },
+  { sentence: 'אני רוצה מים, בבקשה.',            en: 'I want water please' },
+  { sentence: 'איפה השדה תעופה?',               en: 'Where is the airport?' },
+  { sentence: 'כמה זה עולה?',                    en: 'How much does it cost?' },
+  { sentence: 'אני רעב.',                        en: 'I am hungry' },
+  { sentence: 'החשבון, בבקשה.',                 en: 'The bill please' },
+  { sentence: 'אתה מדבר אנגלית?',              en: 'Do you speak English?' },
+  { sentence: 'אני צריך עזרה.',                  en: 'I need help' },
+  { sentence: 'לילה טוב!',                       en: 'Good night!' },
+  { sentence: 'תודה רבה!',                       en: 'Thank you very much!' },
+  { sentence: 'להתראות!',                        en: 'See you later!' },
+  { sentence: 'הכלב גדול.',                      en: 'The dog is big' },
+  { sentence: 'הבית שלי קטן.',                   en: 'My house is small' },
+  { sentence: 'מחר אני הולך לעיר.',             en: 'Tomorrow I am going to the city' },
+  { sentence: 'אני אוהב קפה.',                   en: 'I like coffee' },
+  { sentence: 'השמש צהובה.',                     en: 'The sun is yellow' },
+  { sentence: 'מה השעה?',                        en: 'What time is it?' },
+];
+
+// ═══════════════════════════════════════════════════════════════
+// CONJUGATION SCREEN
+// ═══════════════════════════════════════════════════════════════
+let conjCurrentTense = 'present';
+let conjMode = 'table'; // 'table' | 'practice'
+let conjPracticeQuestion = null;
+let conjPracticeAnswered = false;
+let conjPracticeStats = { correct: 0, wrong: 0 };
+
+function openConjugation() {
+  conjCurrentTense = 'present';
+  conjMode = 'table';
+  conjPracticeStats = { correct: 0, wrong: 0 };
+  const langLabel = state.currentLang === 'pt' ? '🇵🇹 Portuguese' : '🇮🇱 Hebrew';
+  document.getElementById('conjTitle').textContent = `📝 ${langLabel} Conjugation`;
+  document.getElementById('conjTenseTabs').style.display = '';
+  document.getElementById('conjTableWrap').style.display = '';
+  document.getElementById('conjPracticeArea').style.display = 'none';
+  document.getElementById('conjPracticeToggle').textContent = '🎯 Practice';
+  showScreen('conjugationScreen');
+  renderConjugation();
+}
+
+function exitConjugation() {
+  openVocab();
+}
+
+function switchConjTense(tense) {
+  conjCurrentTense = tense;
+  renderConjugation();
+}
+
+function renderConjugation() {
+  const data = state.currentLang === 'pt' ? PT_CONJUGATIONS : HE_CONJUGATIONS;
+  const tenseData = data[conjCurrentTense];
+
+  // Render tense tabs
+  const tabsEl = document.getElementById('conjTenseTabs');
+  tabsEl.innerHTML = '';
+  Object.keys(data).forEach(key => {
+    const btn = document.createElement('button');
+    btn.className = 'conj-tab' + (key === conjCurrentTense ? ' active' : '');
+    btn.textContent = key === 'present' ? '▶ Present' : '⏮ Past';
+    btn.onclick = () => switchConjTense(key);
+    tabsEl.appendChild(btn);
+  });
+
+  // Render table
+  const wrap = document.getElementById('conjTableWrap');
+  const isRtl = state.currentLang === 'he';
+  let html = `<div class="conj-tense-title">${escH(tenseData.title)}</div>`;
+  html += `<table class="conj-table">`;
+
+  // Header: subject col + one col per verb
+  html += '<thead><tr><th class="subj-col">Subject</th>';
+  tenseData.verbs.forEach(v => {
+    html += `<th>${escH(v.infinitive)}<br><span style="font-size:11px;font-weight:600;opacity:0.7">${escH(v.translation)}</span></th>`;
+  });
+  html += '</tr></thead><tbody>';
+
+  // One row per subject
+  tenseData.subjects.forEach((subject, sIdx) => {
+    html += `<tr><td class="subj-cell">${escH(subject)}</td>`;
+    tenseData.verbs.forEach(v => {
+      const form = v.forms[sIdx] || '';
+      const translit = v.translit ? v.translit[sIdx] : '';
+      html += `<td ${isRtl ? 'dir="rtl"' : ''}>${escH(form)}${translit ? `<br><span style="font-size:11px;font-weight:700;opacity:0.7;color:var(--gold)" dir="ltr">${escH(translit)}</span>` : ''}</td>`;
+    });
+    html += '</tr>';
+  });
+
+  html += '</tbody></table>';
+  wrap.innerHTML = html;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// CONJUGATION PRACTICE (type the conjugated form / romanization)
+// ═══════════════════════════════════════════════════════════════
+function toggleConjPractice() {
+  conjMode = conjMode === 'table' ? 'practice' : 'table';
+  document.getElementById('conjTenseTabs').style.display = conjMode === 'table' ? '' : 'none';
+  document.getElementById('conjTableWrap').style.display = conjMode === 'table' ? '' : 'none';
+  document.getElementById('conjPracticeArea').style.display = conjMode === 'practice' ? 'flex' : 'none';
+  document.getElementById('conjPracticeToggle').textContent = conjMode === 'practice' ? '📊 Table' : '🎯 Practice';
+  if (conjMode === 'practice') {
+    conjPracticeStats = { correct: 0, wrong: 0 };
+    conjPracticeQuestion = pickConjPracticeQuestion();
+    renderConjPractice();
+  }
+}
+
+function pickConjPracticeQuestion() {
+  const data = state.currentLang === 'pt' ? PT_CONJUGATIONS : HE_CONJUGATIONS;
+  const tenseKeys = Object.keys(data);
+  const tenseKey = tenseKeys[Math.floor(Math.random() * tenseKeys.length)];
+  const tenseData = data[tenseKey];
+  const verb = tenseData.verbs[Math.floor(Math.random() * tenseData.verbs.length)];
+  const subjIdx = Math.floor(Math.random() * tenseData.subjects.length);
+  return { tenseData, verb, subjIdx };
+}
+
+// Hebrew answers are checked against the romanization (typed in Latin letters); Portuguese
+// answers are checked against the form itself, since it's already written in Latin letters.
+function conjExpectedAnswer(verb, subjIdx) {
+  return state.currentLang === 'he' ? (verb.translit?.[subjIdx] || '') : (verb.forms[subjIdx] || '');
+}
+
+function conjNormalizeAnswer(s) {
+  return stripStressMarks(String(s).toLowerCase()).replace(/[^a-z0-9 ]/g, '').trim();
+}
+
+function renderConjPractice() {
+  const area = document.getElementById('conjPracticeArea');
+  const { tenseData, verb, subjIdx } = conjPracticeQuestion;
+  const isHe = state.currentLang === 'he';
+  const subject = tenseData.subjects[subjIdx];
+  conjPracticeAnswered = false;
+
+  area.innerHTML = `
+    <div class="trans-sentence-card">
+      <div class="trans-sentence-label">${escH(tenseData.title)}</div>
+      <div class="trans-sentence-text" dir="${isHe ? 'rtl' : 'ltr'}">${escH(verb.infinitive)}</div>
+      <div class="flashcard-hint">${escH(verb.translation)}</div>
+      <div class="trans-sentence-label" style="margin-top:12px">Subject: ${escH(subject)}</div>
+    </div>
+    <div class="flash-input-area">
+      <div class="flashcard-hint">${isHe ? 'Type the romanized (Latin-letter) conjugated form' : 'Type the conjugated form'}</div>
+      <input id="conjPracticeInput" class="flash-text-input" type="text" placeholder="${isHe ? 'e.g. medaber' : 'Type here…'}" autocomplete="off" autocorrect="off" spellcheck="false">
+      <div class="flash-result-row" id="conjPracticeResultRow">
+        <div class="flash-result-badge" id="conjPracticeResultBadge"></div>
+      </div>
+      <div class="flash-btn-row" id="conjPracticeBtnRow">
+        <button class="flash-btn flash-btn-pass" onclick="conjPracticeSkip()">Skip</button>
+        <button class="flash-btn flash-btn-submit inactive" id="conjPracticeSubmitBtn" onclick="conjPracticeSubmit()">Check</button>
+      </div>
+    </div>
+    <div style="display:flex;gap:16px;color:rgba(255,255,255,0.75);font-weight:800;font-size:13px">
+      <span>✓ ${conjPracticeStats.correct}</span><span>✗ ${conjPracticeStats.wrong}</span>
+    </div>`;
+
+  const input = document.getElementById('conjPracticeInput');
+  input.focus();
+  input.addEventListener('input', () => {
+    document.getElementById('conjPracticeSubmitBtn').classList.toggle('inactive', input.value.trim().length === 0);
+  });
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && input.value.trim().length > 0 && !conjPracticeAnswered) conjPracticeSubmit();
+  });
+}
+
+function conjPracticeSubmit() {
+  if (conjPracticeAnswered) return;
+  const input = document.getElementById('conjPracticeInput');
+  if (!input || !input.value.trim()) return;
+
+  const { verb, subjIdx } = conjPracticeQuestion;
+  const expected = conjExpectedAnswer(verb, subjIdx);
+  const userVal = conjNormalizeAnswer(input.value);
+  const expectedVal = conjNormalizeAnswer(expected);
+  const correct = userVal === expectedVal || levenshteinClose(userVal, expectedVal, 1);
+
+  conjPracticeAnswered = true;
+  input.disabled = true;
+  const resultRow = document.getElementById('conjPracticeResultRow');
+  const badge = document.getElementById('conjPracticeResultBadge');
+  resultRow.classList.add('show');
+
+  if (correct) {
+    conjPracticeStats.correct++;
+    input.classList.add('correct-input');
+    badge.className = 'flash-result-badge correct';
+    badge.textContent = '✓ Correct!';
+    spawnConfetti(12);
+  } else {
+    conjPracticeStats.wrong++;
+    input.classList.add('wrong-input');
+    badge.className = 'flash-result-badge wrong';
+    badge.textContent = `✗ Answer: ${expected}`;
+  }
+  document.getElementById('conjPracticeBtnRow').innerHTML =
+    `<button class="flash-btn flash-btn-next" onclick="conjPracticeNext()" style="flex:1">Next →</button>`;
+}
+
+function conjPracticeSkip() {
+  if (conjPracticeAnswered) return;
+  conjPracticeAnswered = true;
+  const { verb, subjIdx } = conjPracticeQuestion;
+  const expected = conjExpectedAnswer(verb, subjIdx);
+  const input = document.getElementById('conjPracticeInput');
+  if (input) input.disabled = true;
+  const resultRow = document.getElementById('conjPracticeResultRow');
+  const badge = document.getElementById('conjPracticeResultBadge');
+  resultRow.classList.add('show');
+  badge.className = 'flash-result-badge passed';
+  badge.textContent = `Skipped · Answer: ${expected}`;
+  document.getElementById('conjPracticeBtnRow').innerHTML =
+    `<button class="flash-btn flash-btn-next" onclick="conjPracticeNext()" style="flex:1">Next →</button>`;
+}
+
+function conjPracticeNext() {
+  conjPracticeQuestion = pickConjPracticeQuestion();
+  renderConjPractice();
+}
+
+// ═══════════════════════════════════════════════════════════════
+// TRANSLATE GAME
+// ═══════════════════════════════════════════════════════════════
+let transState = { sentences: [], idx: 0, correct: 0, passed: 0, wrong: 0 };
+
+function startTranslate() {
+  const sentences = state.currentLang === 'pt' ? PT_TRANSLATE_SENTENCES : HE_TRANSLATE_SENTENCES;
+  transState = {
+    sentences: [...sentences].sort(() => Math.random() - 0.5),
+    idx: 0, correct: 0, passed: 0, wrong: 0,
+  };
+  const langLabel = state.currentLang === 'pt' ? '🇵🇹 Portuguese' : '🇮🇱 Hebrew';
+  document.getElementById('transTitle').textContent = `🌐 ${langLabel} → English`;
+  showScreen('translateScreen');
+  renderTranslateCard();
+}
+
+function exitTranslate() {
+  openVocab();
+}
+
+function renderTranslateCard() {
+  const area = document.getElementById('transCardArea');
+  area.innerHTML = '';
+  const total = transState.sentences.length;
+  const idx   = transState.idx;
+
+  if (idx >= total) { renderTranslateSummary(area); return; }
+
+  document.getElementById('transProgressText').textContent = `${idx + 1} / ${total}`;
+  document.getElementById('transProgressFill').style.width = `${(idx / total) * 100}%`;
+
+  const item  = transState.sentences[idx];
+  const isRtl = state.currentLang === 'he';
+
+  const wrap = document.createElement('div');
+  wrap.style.cssText = 'width:100%;max-width:360px;display:flex;flex-direction:column;gap:20px;';
+  wrap.innerHTML = `
+    <div class="trans-sentence-card">
+      <div class="trans-sentence-label">Translate into English:</div>
+      <div class="trans-sentence-text" ${isRtl ? 'dir="rtl"' : ''}>${escH(item.sentence)}</div>
+    </div>
+    <div class="flash-input-area">
+      <input id="transInput" class="flash-text-input" type="text" placeholder="Type English translation…" autocomplete="off" autocorrect="off" spellcheck="false">
+      <div class="flash-result-row" id="transResultRow">
+        <div class="flash-result-badge" id="transResultBadge"></div>
+      </div>
+      <div class="flash-btn-row" id="transBtnRow">
+        <button class="flash-btn flash-btn-pass" onclick="translatePass()">Pass</button>
+        <button class="flash-btn flash-btn-submit inactive" id="transSubmitBtn" onclick="translateSubmit()">Check</button>
+      </div>
+    </div>`;
+  area.appendChild(wrap);
+
+  const input = document.getElementById('transInput');
+  input.focus();
+  input.addEventListener('input', () => {
+    document.getElementById('transSubmitBtn').classList.toggle('inactive', input.value.trim().length === 0);
+  });
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && input.value.trim().length > 0) translateSubmit();
+  });
+}
+
+function translateSubmit() {
+  const input = document.getElementById('transInput');
+  if (!input || !input.value.trim()) return;
+  const item = transState.sentences[transState.idx];
+  const normalize = s => s.toLowerCase().replace(/[^a-z0-9 ']/g, '').trim();
+  const userVal  = normalize(input.value.trim());
+  const expected = normalize(item.en);
+  const correct  = userVal === expected || levenshteinClose(userVal, expected, 3);
+
+  input.disabled = true;
+  const resultRow = document.getElementById('transResultRow');
+  const badge     = document.getElementById('transResultBadge');
+  resultRow.classList.add('show');
+
+  if (correct) {
+    transState.correct++;
+    input.classList.add('correct-input');
+    badge.className   = 'flash-result-badge correct';
+    badge.textContent = '✓ Correct!';
+    spawnConfetti(12);
+  } else {
+    transState.wrong++;
+    input.classList.add('wrong-input');
+    badge.className   = 'flash-result-badge wrong';
+    badge.textContent = `✗ Answer: ${item.en}`;
+  }
+  document.getElementById('transBtnRow').innerHTML =
+    `<button class="flash-btn flash-btn-next" onclick="translateNext()" style="flex:1">Next →</button>`;
+}
+
+function translatePass() {
+  const item  = transState.sentences[transState.idx];
+  transState.passed++;
+  const input = document.getElementById('transInput');
+  if (input) input.disabled = true;
+  const resultRow = document.getElementById('transResultRow');
+  const badge     = document.getElementById('transResultBadge');
+  resultRow.classList.add('show');
+  badge.className   = 'flash-result-badge passed';
+  badge.textContent = `Passed · Answer: ${item.en}`;
+  document.getElementById('transBtnRow').innerHTML =
+    `<button class="flash-btn flash-btn-next" onclick="translateNext()" style="flex:1">Next →</button>`;
+}
+
+function translateNext() {
+  transState.idx++;
+  renderTranslateCard();
+}
+
+function renderTranslateSummary(area) {
+  document.getElementById('transProgressFill').style.width = '100%';
+  document.getElementById('transProgressText').textContent = 'Done!';
+  const total = transState.sentences.length;
+  const pct   = Math.round((transState.correct / Math.max(total, 1)) * 100);
+  const icon  = pct >= 80 ? '🏆' : pct >= 50 ? '⭐' : '💪';
+  const title = pct >= 80 ? 'Excellent!' : pct >= 50 ? 'Good job!' : 'Keep practising!';
+  area.innerHTML = `
+    <div class="flash-summary">
+      <div class="flash-summary-icon">${icon}</div>
+      <div class="flash-summary-title">${title}</div>
+      <div class="flash-summary-stats">
+        <div class="flash-stat"><div class="val">${transState.correct}</div><div class="lbl">Correct</div></div>
+        <div class="flash-stat"><div class="val">${transState.passed}</div><div class="lbl">Passed</div></div>
+        <div class="flash-stat"><div class="val">${transState.wrong}</div><div class="lbl">Wrong</div></div>
+      </div>
+      <button class="btn-continue-home" onclick="exitTranslate()">Back to Vocabulary</button>
+      <button class="modal-btn" onclick="startTranslate()" style="background:var(--blue);box-shadow:0 3px 0 var(--blue-d);margin-top:4px">Play Again</button>
+    </div>`;
+  spawnConfetti(24);
+}
+
+function levenshteinClose(a, b, maxDist) {
+  if (Math.abs(a.length - b.length) > maxDist) return false;
+  const dp = Array.from({length: a.length + 1}, (_, i) =>
+    Array.from({length: b.length + 1}, (_, j) => i === 0 ? j : j === 0 ? i : 0)
+  );
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      dp[i][j] = a[i-1] === b[j-1] ? dp[i-1][j-1] : 1 + Math.min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]);
+    }
+  }
+  return dp[a.length][b.length] <= maxDist;
+}
+
+// ═══════════════════════════════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════════════════════════════
-updateHomeStats();
-renderUnits();
+updateHomeForLanguage();
 </script>
 </body>
 </html>
