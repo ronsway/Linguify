@@ -10,7 +10,7 @@ model Progress {
   id              String   @id @default(cuid())
   anonymousId     String
   language        String
-  completedLessons Json    @default([])
+  completedLessons Json    @default("[]")
   totalXP         Int      @default(0)
   streak          Int      @default(0)
   gems            Int      @default(0)
